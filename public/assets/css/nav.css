@@ -11,3 +11,7 @@ nav {
     border-bottom: 2px solid rgb(225, 210, 48);
     padding-bottom: 0px;
 }
+
+.logo-img {
+    width: 80px;
+}
