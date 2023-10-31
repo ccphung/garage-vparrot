@@ -1,0 +1,13 @@
+nav {
+    background: black;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: rgb(225, 210, 48);
+    border-bottom: 2px solid rgb(225, 210, 48);
+    padding-bottom: 0px;
+}
