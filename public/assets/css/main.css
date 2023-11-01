@@ -56,7 +56,11 @@ header {
     grid-template-columns: 1fr 1fr;
 }
 
-
 .text-blue {
     color:#1e0784;
+}
+
+.btn-service {
+    color:#1e0784;
+    border:2px solid #3e17e8;
 }
