@@ -1,0 +1,59 @@
+/* Navigation */
+nav {
+    background: black;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: rgb(225, 210, 48);
+    border-bottom: 2px solid rgb(225, 210, 48);
+    padding-bottom: 0px;
+}
+
+/* Home page */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+.bg-img{
+
+    width: 60vw;
+    border-radius: 15px;
+    z-index: -100;
+    filter: brightness(25%);
+}
+
+.logo-img {
+    width: 100px;
+}
+
+.centered-text {
+    position: absolute;
+}
+
+.header-title, .header-list {
+    font-family: 'Antonio', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: bold;
+}
+
+.header-title {
+    color: rgb(225, 210, 48);
+    font-size: 3em;
+    margin: 40px;
+}
+
+.header-list {
+    color: rgb(212, 136, 13);
+    list-style: none;
+    font-size: 2em;
+}
+
+.header-list li {
+    padding: 20px;
+}
