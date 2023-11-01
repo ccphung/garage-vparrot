@@ -4,23 +4,50 @@
 
 {% block body %}
     <header>
-        <img src="{{ asset('images/background/tory-bishop-QzH-UGjKN8g-unsplash.jpg') }}" alt="car repair" class="header-img">
-        <div class="centered-text">
-            <h2 class="header-title">Garage automobile</h2>
-            <ul class="header-list">
-                <li>Réparation</li>
-                <li>Entretien</li>
-                <li>Voitures d'ocassion</li>
-            </ul>
-
+        <div class="header-title">
+            <h1 class="text-center">Services et réparations automobiles</h1>
+            <h2 class="text-center">Vente de voitures d'occasion</h2>
+        </div>
+        <img src="{{ asset('images/background/kenny-eliason-eqU1oK3oxvY-unsplash.jpg') }}" alt="car repair" class="header-img">
         </div>
     </header>
     <main>
         <section class="services-container">
-            <h3>Nos services</h3>
-            <div>
-                        <img src="{{ asset('images/services/christian-buehner-Fd6osyVbtG4-unsplash.jpg') }}" alt="car repair" class="service-img">
-                                <img src="{{ asset('images/background/christian-buehner-Fd6osyVbtG4-unsplash.jpg') }}" alt="car repair" class="service-img">
+            <h2 class="text-center">Nos services</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="{{ asset('images/services/christian-buehner-Fd6osyVbtG4-unsplash.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Réparation mécanique</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Nous contacter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 20rem;">
+                            <img class="card-img-top" src="{{ asset('images/services/florian-olivo-aj2L0-Gb7NE-unsplash.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Réparation carrosserie</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Nous contacter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="{{ asset('images/services/dewang-gupta-pCnap8khLyM-unsplash.jpg') }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Entretien</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             </div>
         </section>
     </main>

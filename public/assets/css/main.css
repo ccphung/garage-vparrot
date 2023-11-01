@@ -1,6 +1,7 @@
 /* Navigation */
 nav {
     background: black;
+    position: absolute;
 }
 
 .nav-link {
@@ -9,50 +10,31 @@ nav {
 
 .nav-link:hover {
     color: rgb(225, 210, 48);
-    border-bottom: 2px solid rgb(225, 210, 48);
+    border-bottom: 2px solid  rgb(225, 210, 48);
     padding-bottom: 0px;
 }
 
 /* Header page */
-
 header {
     display: flex;
     justify-content: center;
 }
+
+.header-title {
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    color:rgb(255, 255, 255);
+    z-index: 2;
+
+}
 .header-img{
-    width: 80vw;
-    border-radius: 15px;
-    z-index: -100;
-    filter: brightness(25%);
+    width: 100vw;
+    filter:brightness(80%);
 }
 
 .logo-img {
-    width: 100px;
+    width: 50px;
 }
+/* Section Services */
 
-.centered-text {
-    position: absolute;
-}
 
-.header-title, .header-list {
-    font-family: 'Antonio', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    font-weight: bold;
-}
-
-.header-title {
-    color: rgb(225, 210, 48);
-    font-size: 3em;
-    margin: 40px;
-}
-
-.header-list {
-    color: rgb(212, 136, 13);
-    list-style: none;
-    font-size: 2em;
-}
-
-.header-list li {
-    padding: 20px;
-}
