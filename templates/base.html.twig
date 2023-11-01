@@ -3,18 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Accueil{% endblock %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap"         rel="stylesheet">
         <link rel="icon" href="{{ asset('images/logo/favicon.png') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
         {# Style sheets #}
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         {% block stylesheets %} {% endblock %}
-        <link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+
 
         {# Javascript #}
-        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
         {% block javascripts %}{% endblock %}
+        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
         <script src="{{ asset('assets/js/scripts.js')}}" defer></script>
 
     </head>
