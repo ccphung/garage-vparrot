@@ -1,3 +1,8 @@
+/* Body */
+body {
+    overflow-x: hidden;
+}
+
 /* Navigation */
 nav {
     background: black;
@@ -43,6 +48,15 @@ header {
 .logo-img {
     width: 50px;
 }
+
 /* Section Services */
+.services-container {
+    margin-top: 40px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 
+.text-blue {
+    color:#1e0784;
+}
