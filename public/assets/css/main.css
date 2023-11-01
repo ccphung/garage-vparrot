@@ -13,15 +13,14 @@ nav {
     padding-bottom: 0px;
 }
 
-/* Home page */
+/* Header page */
 
 header {
     display: flex;
     justify-content: center;
 }
-.bg-img{
-
-    width: 60vw;
+.header-img{
+    width: 80vw;
     border-radius: 15px;
     z-index: -100;
     filter: brightness(25%);
