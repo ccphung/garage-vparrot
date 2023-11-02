@@ -5,22 +5,21 @@
         <title>{% block title %}Accueil{% endblock %}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Lato&display=swap" rel="stylesheet">
         <link rel="icon" href="{{ asset('images/logo/favicon.png') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
         {# Style sheets #}
-        {% block stylesheets %} {% endblock %}
+        {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-
+        {% endblock %}
 
         {# Javascript #}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
         <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
         <script src="{{ asset('assets/js/scripts.js')}}" defer></script>
-
+        {% endblock %}
     </head>
 
     <body>
