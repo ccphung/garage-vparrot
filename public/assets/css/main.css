@@ -16,9 +16,19 @@ nav {
 
 .nav-link:hover {
     color: rgb(225, 210, 48);
-    border-bottom: 2px solid  rgb(225, 210, 48);
     padding-bottom: 0px;
 }
+
+.logo-img {
+    width: 50px;
+}
+
+@media (min-height: 1000px){
+    .navbar-toggler, .navbar-toggler-icon, .collapse, .navbar-nav, .toggle-nav {
+        float: right;
+    }
+}
+
 
 /* Header */
 header {
@@ -43,9 +53,6 @@ header {
     filter:brightness(80%);
 }
 
-.logo-img {
-    width: 50px;
-}
 
 /* Section Services */
 .section-title{
@@ -95,7 +102,14 @@ header {
 /* Footer */
 footer {
     background: black;
+    margin-top: 50px;
+    padding: 30px;
 }
-.socials {
-    width: 50px;
+.socials, .opening-hours {
+    display:flex;
+    justify-content: center;
+}
+
+.logo-footer {
+    width: 200px;
 }
