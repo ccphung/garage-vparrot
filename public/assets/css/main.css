@@ -62,7 +62,7 @@ header {
     color:#1e0784;
 }
 
-.text-yellow {
+.text-orange {
     color:rgb(222, 90, 19);
 }
 
@@ -79,4 +79,23 @@ header {
 /* Section Used Car */
 .used-car-container {
     margin-top: 50px;
+}
+
+.btn-car {
+    color:rgb(222, 90, 19);
+    border:2px solid rgb(222, 90, 19);
+}
+
+.btn-car:hover {
+    background:rgb(222, 90, 19);
+    color: #fff;
+}
+
+
+/* Footer */
+footer {
+    background: black;
+}
+.socials {
+    width: 50px;
 }
