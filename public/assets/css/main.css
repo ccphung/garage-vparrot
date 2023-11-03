@@ -1,6 +1,7 @@
 /* Body */
 body {
     overflow-x: hidden;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 /* Navigation */
@@ -12,11 +13,10 @@ nav {
 
 .nav-link {
     color: #fff;
-    font-family: 'Lato', sans-serif;
 }
 
 .nav-link:hover {
-    color: rgb(225, 210, 48);
+    color: #FFDE59;
 }
 
 .logo-img {
