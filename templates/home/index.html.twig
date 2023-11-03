@@ -4,10 +4,10 @@
 
 {% block body %}
     <header>
-        <div class="header-title">
+        <div class="header-container">
             <div class="discount text-center">OFFRE SPECIALE : -25% POUR TOUTE VIDANGE AVANT LE 31/12/2023</div>
-            <h1 class="text-center">Services et réparations automobile</h1>
-            <h2 class="text-center">Vente de voitures d'occasion</h2>
+            <h1 class="text-center header-text">Services et réparations automobile</h1>
+            <h2 class="text-center header-text">Vente de voitures d'occasion</h2>
         </div>
         <img src="{{ asset('images/background/kenny-eliason-eqU1oK3oxvY-unsplash.jpg') }}" alt="car repair" class="header-img">
         </div>
@@ -15,44 +15,44 @@
     <main>
     {# Section services #}
         <section>
-            <div class="services-container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="card">
-                                <img class="card-img-top" src="{{ asset('images/services/christian-buehner-Fd6osyVbtG4-unsplash.jpg') }}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Réparation mécanique</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
+            <div class="container mt-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xs-6 col-md-5 col-lg-3">
+                        <div class="text-center">
+                            <h2 class="section-title"><span class="text-blue">Nos services</span> de réparation et entretien</h2>
+                            <p>Achetez maintenant et payez plus tard & en plusieurs fois</p>
+                            <p>Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de  remboursement avant de vous engager.</p>
+                            <a href="#" class="btn btn-service">Nous contacter pour tout renseignement</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-5 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('images/services/christian-buehner-Fd6osyVbtG4-unsplash.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Réparation mécanique</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
-                        <div class="col-4">
-                            <div class="card">
-                                <img class="card-img-top" src="{{ asset('images/services/dewang-gupta-pCnap8khLyM-unsplash.jpg') }}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Entretien</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
+                    </div>
+                    <div class="col-xs-6 col-md-5 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('images/services/dewang-gupta-pCnap8khLyM-unsplash.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Entretien</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
-                        <div class="col-4">
-                            <div class="card">
-                                <img class="card-img-top" src="{{ asset('images/services/florian-olivo-aj2L0-Gb7NE-unsplash.jpg') }}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Réparation carosserie</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
+                    </div>
+                    <div class="col-xs-6 col-md-5 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('images/services/florian-olivo-aj2L0-Gb7NE-unsplash.jpg') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Réparation carosserie</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            <div class="text-center">
-                <h2 class="section-title"><span class="text-blue">Nos services</span> de réparation et entretien</h2>
-                <p>Achetez maintenant et payez plus tard & en plusieurs fois</p>
-                <p>Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de  remboursement avant de vous engager.</p>
-                <a href="#" class="btn btn-service">Nous contacter pour tout renseignement</a>
-            </div>
         </section>
     {# Section Used Car #}
         <section class="used-car-container">
@@ -61,7 +61,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-xs-12 col-lg-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ asset('images/cars/erik-mclean-Tad0GganQd0-unsplash.jpg') }}" alt="Card image cap">
                             <div class="card-body">
@@ -71,7 +71,7 @@
                             <a href="#" class="btn btn-car">Découvrir</a>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-xs-12 col-lg-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ asset('images/cars/jon-koop-khYVyHiNZo0-unsplash.jpg') }}" alt="Card image cap">
                             <div class="card-body">
@@ -81,7 +81,7 @@
                             <a href="#" class="btn btn-car">Découvrir</a>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-xs-12 col-lg-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ asset('images/cars/erik-mclean-tBjE6mflzww-unsplash.jpg') }}" alt="Card image cap">
                             <div class="card-body">

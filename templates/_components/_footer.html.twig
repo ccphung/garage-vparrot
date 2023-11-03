@@ -1,20 +1,13 @@
 <footer>
     <div class="container-fluid">
         <div class="row">
-            <div class="col d-flex justify-content-start align-items-center">
+        {# Logo #}
+            <div class="col-lg-4 col-sm-12 d-flex justify-content-center">
                 <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="logo-footer">
             </div>
-            <div class="col d-flex flex-column justify-content-center align-items-center">
-                <p class="text-center text-white">Suivez-nous sur les réseaux !</p>
-                <div class="socials">
-                    <img  class="m-2" src="{{ asset('images/logo/instagram.svg') }}" alt="logo instagram">
-                    <img class="m-2" src="{{ asset('images/logo/twitter.svg') }}" alt="logo twitter">
-                    <img class="m-2" src="{{ asset('images/logo/facebook.svg') }}" alt="logo facebook">
-                </div>
-            </div>
-            <div class="col text-white opening-hours">
-
-                <ul>
+        {# Opening hours #}
+            <div class="col-lg-4 col-md-12 text-white opening-hours">
+                <ul class="list-unstyled">
                     <li>Horaires d'ouverture</li>
                     <li>lun.: 8:45-12:00, 14:00-18:00</li>
                     <li>mar.: 8:45-12:00, 14:00-18:00</li>
@@ -24,6 +17,16 @@
                     <li>sam.: 8:45-12:00, 14:00-18:00</li>
                     <li>dim.: Fermé</li>                    
                 </ul>
+            </div>
+        
+        {# Socials #}
+            <div class="col-lg-4 col-md-12 d-flex flex-column justify-content-center align-items-center">
+                <p class="text-center text-white socials-text">Suivez-nous sur les réseaux !</p>
+                <div class="socials">
+                    <img class="m-2" src="{{ asset('images/logo/instagram.svg') }}" alt="logo instagram">
+                    <img class="m-2" src="{{ asset('images/logo/twitter.svg') }}" alt="logo twitter">
+                    <img class="m-2" src="{{ asset('images/logo/facebook.svg') }}" alt="logo facebook">
+                </div>
             </div>
         </div>
     </div>

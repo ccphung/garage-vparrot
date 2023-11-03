@@ -4,6 +4,7 @@ body {
 }
 
 /* Navigation */
+
 nav {
     background: black;
     position: absolute;
@@ -16,24 +17,17 @@ nav {
 
 .nav-link:hover {
     color: rgb(225, 210, 48);
-    padding-bottom: 0px;
 }
 
 .logo-img {
     width: 50px;
 }
 
-@media (min-height: 1000px){
-    .navbar-toggler, .navbar-toggler-icon, .collapse, .navbar-nav, .toggle-nav {
-        float: right;
-    }
-}
-
-
 /* Header */
 header {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .discount{
@@ -41,9 +35,9 @@ header {
     padding:8px;
 }
 
-.header-title {
+.header-container {
     font-family: 'Lato', sans-serif;
-    position: absolute;
+    position: relative;
     color:rgb(255, 255, 255);
     z-index: 2;
 }
@@ -57,12 +51,6 @@ header {
 /* Section Services */
 .section-title{
     font-family: 'Hind Siliguri', sans-serif;
-}
-
-.services-container {
-    margin-top: 40px;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
 }
 
 .text-blue {
@@ -113,3 +101,41 @@ footer {
 .logo-footer {
     width: 200px;
 }
+
+/* Media queries */
+@media (max-height: 480px){
+    .logo-container {
+        position: absolute;
+        left: 50%;
+    }
+
+    .card {
+    margin: 10px;
+    }
+}
+
+@media (max-height: 320px){
+    .header-text {
+        display:none;
+    }
+
+    .header-img {
+        position: relative;
+    }
+
+    .socials-text {
+        display:none;
+    }
+}
+
+
+@media (min-height: 320px){
+    .header-container {
+        position: absolute;
+    }
+
+    header {
+        flex-direction: row;
+    }
+}
+
