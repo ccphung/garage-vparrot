@@ -32,7 +32,7 @@ class Review
     #[ORM\Column]
     private ?bool $isApproved = null;
 
-    #[ORM\ManyToOne(inversedBy: 'review')]
+    #[ORM\ManyToOne(inversedBy: 'Review')]
     private ?User $user = null;
 
     public function getId(): ?int
