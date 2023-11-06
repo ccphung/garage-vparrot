@@ -35,7 +35,7 @@ class DashboardController extends AbstractDashboardController
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Annonces', 'fa-solid fa-car', Ad::class)
         ->setPermission('ROLE_USER');
-        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-book', Review::class)
+        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
         ->setPermission('ROLE_USER');
         yield MenuItem::linkToCrud('Horaires d\'ouverture', 'fa-solid fa-calendar-days', OpeningHours::class)
         ->setPermission('ROLE_ADMIN');
