@@ -11,10 +11,13 @@
 
         {# Style sheets #}
 
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
         {% block stylesheets %}
-        {% endblock %}
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+        {% endblock %}
+
 
         {# Javascript #}
         {% block javascripts %}

@@ -1,0 +1,16 @@
+/* Login page */
+
+.login-container {
+    min-height: 60vh;
+}
+
+.btn-login {
+    margin-top: 20px;
+    color:#1e0784;
+    border:2px solid #1e0784;
+}
+
+.btn-login:hover {
+    background:#1e0784;
+    color: #fff;
+}
