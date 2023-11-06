@@ -32,6 +32,9 @@ class Review
     #[ORM\Column]
     private ?bool $isApproved = null;
 
+    #[ORM\ManyToOne(inversedBy: 'review')]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +108,18 @@ class Review
     public function setIsApproved(bool $isApproved): static
     {
         $this->isApproved = $isApproved;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

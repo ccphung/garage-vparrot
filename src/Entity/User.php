@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -32,6 +34,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 50)]
     private ?string $lastName = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: review::class)]
+    private Collection $review;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Ad::class)]
+    private Collection $ad;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?OpeningHours $openingHours = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Service::class)]
+    private Collection $service;
+
+    public function __construct()
+    {
+        $this->review = new ArrayCollection();
+        $this->ad = new ArrayCollection();
+        $this->service = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -123,6 +144,108 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastName(string $lastName): static
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, review>
+     */
+    public function getReview(): Collection
+    {
+        return $this->review;
+    }
+
+    public function addReview(review $review): static
+    {
+        if (!$this->review->contains($review)) {
+            $this->review->add($review);
+            $review->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(review $review): static
+    {
+        if ($this->review->removeElement($review)) {
+            // set the owning side to null (unless already changed)
+            if ($review->getUser() === $this) {
+                $review->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Ad>
+     */
+    public function getAd(): Collection
+    {
+        return $this->ad;
+    }
+
+    public function addAd(Ad $ad): static
+    {
+        if (!$this->ad->contains($ad)) {
+            $this->ad->add($ad);
+            $ad->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAd(Ad $ad): static
+    {
+        if ($this->ad->removeElement($ad)) {
+            // set the owning side to null (unless already changed)
+            if ($ad->getUser() === $this) {
+                $ad->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getOpeningHours(): ?OpeningHours
+    {
+        return $this->openingHours;
+    }
+
+    public function setOpeningHours(?OpeningHours $openingHours): static
+    {
+        $this->openingHours = $openingHours;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Service>
+     */
+    public function getService(): Collection
+    {
+        return $this->service;
+    }
+
+    public function addService(Service $service): static
+    {
+        if (!$this->service->contains($service)) {
+            $this->service->add($service);
+            $service->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeService(Service $service): static
+    {
+        if ($this->service->removeElement($service)) {
+            // set the owning side to null (unless already changed)
+            if ($service->getUser() === $this) {
+                $service->setUser(null);
+            }
+        }
 
         return $this;
     }
