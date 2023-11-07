@@ -23,6 +23,12 @@ nav {
     width: 50px;
 }
 
+.logo-container {
+    position: absolute;
+    left: 50%;
+}
+
+
 /* Header */
 header {
     display: flex;
@@ -104,12 +110,7 @@ footer {
 
 /* Media queries */
 @media (max-height: 480px){
-    .logo-container {
-        position: absolute;
-        left: 50%;
-    }
-
-    .card {
+.card {
     margin: 10px;
     }
 }
