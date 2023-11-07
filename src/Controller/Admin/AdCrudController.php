@@ -3,9 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Ad;
+use DateTimeImmutable;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateTimeField, AssociationField, MoneyField, IntegerField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateField, AssociationField, MoneyField, IntegerField};
 
 class AdCrudController extends AbstractCrudController
 {
@@ -32,10 +33,12 @@ class AdCrudController extends AbstractCrudController
             IdField::new('id')
                 ->hideOnForm(),
             TextField::new('title'),
+            TextField::new('brand'),
             MoneyField::new('price')->setCurrency('EUR'),
             IntegerField::new('kilometers'),
-            DateTimeField::new('registrationYear')->renderAsNativeWidget(),
-            DateTimeField::new('createdAt')
+            DateField::new('registrationYear')->renderAsNativeWidget(),
+            DateField::new('createdAt')
+                ->hideOnForm(),
         ];
         return $fields;
     }
