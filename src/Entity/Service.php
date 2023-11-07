@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\ServiceRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ServiceRepository::class)]
@@ -14,30 +17,38 @@ class Service
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
+    private ?string $title = null;
 
     #[ORM\Column]
     private ?int $price = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $content = null;
 
     #[ORM\ManyToOne(inversedBy: 'service')]
     private ?User $user = null;
+
+    #[ORM\OneToMany(mappedBy: 'service', targetEntity: ServiceImage::class, orphanRemoval: true, cascade : ['persist'])]
+    private Collection $serviceImage;
+
+    public function __construct()
+    {
+        $this->serviceImage = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getimage(): ?string
+    public function getTitle(): ?string
     {
-        return $this->image;
+        return $this->title;
     }
 
-    public function setimage(string $image): static
+    public function setTitle(string $title): static
     {
-        $this->image = $image;
+        $this->title = $title;
 
         return $this;
     }
@@ -54,14 +65,14 @@ class Service
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getContent(): ?string
     {
-        return $this->description;
+        return $this->content;
     }
 
-    public function setDescription(string $description): static
+    public function setContent(string $content): static
     {
-        $this->description = $description;
+        $this->content = $content;
 
         return $this;
     }
@@ -74,6 +85,36 @@ class Service
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ServiceImage>
+     */
+    public function getserviceImage(): Collection
+    {
+        return $this->serviceImage;
+    }
+
+    public function addServiceImage(ServiceImage $serviceImage): static
+    {
+        if (!$this->serviceImage->contains($serviceImage)) {
+            $this->serviceImage->add($serviceImage);
+            $serviceImage->setService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeServiceImage(ServiceImage $serviceImage): static
+    {
+        if ($this->serviceImage->removeElement($serviceImage)) {
+            // set the owning side to null (unless already changed)
+            if ($serviceImage->getService() === $this) {
+                $serviceImage->setService(null);
+            }
+        }
 
         return $this;
     }

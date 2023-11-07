@@ -4,8 +4,12 @@ namespace App\Entity;
 
 use App\Repository\ServiceImageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ServiceImageRepository::class)]
+#[Vich\Uploadable]
+
 class ServiceImage
 {
     #[ORM\Id]
@@ -13,8 +17,11 @@ class ServiceImage
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Vich\UploadableField (mapping: 'services', fileNameProperty: 'name', size: 'size')]
+    private ?File $file = null;
+
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $name = null ;
 
     #[ORM\Column]
     private ?int $size = null;
@@ -22,13 +29,29 @@ class ServiceImage
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'serviceImages')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?service $service = null;
+    private ?Service $service = null;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setFile(?File $file) : self
+    {
+        $this->file = $file;
+        if (null !== $file) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    public function getFile(): ?File {
+        return $this->file;
     }
 
     public function getName(): ?string
@@ -67,15 +90,16 @@ class ServiceImage
         return $this;
     }
 
-    public function getService(): ?service
+    public function getService(): ?Service
     {
         return $this->service;
     }
 
-    public function setService(service $service): static
+    public function setService(?Service $service): static
     {
         $this->service = $service;
 
         return $this;
     }
+
 }

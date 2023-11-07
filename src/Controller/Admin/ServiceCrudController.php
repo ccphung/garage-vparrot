@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Service;
+use App\Form\Type\ServiceImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, CollectionField, MoneyField};
@@ -31,9 +32,11 @@ class ServiceCrudController extends AbstractCrudController
         $fields = [
             IdField::new('id')
                 ->hideOnForm(),
+            TextField::new('title'),
             MoneyField::new('price')->setCurrency('EUR'),
-            TextField::new('description'),
-            CollectionField::new('image')
+            TextField::new('content'),
+            CollectionField::new('ServiceImage')
+                ->setEntryType(ServiceImageType::class)
         ];
         return $fields;
     }
