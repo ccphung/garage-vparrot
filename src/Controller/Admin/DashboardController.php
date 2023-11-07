@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\OpeningHours;
 use App\Entity\Review;
+use App\Entity\Service;
 use App\Entity\User;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
@@ -31,13 +32,15 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Employé', 'fa-solid fa-person-digging', User::class)
+        yield MenuItem::linkToCrud('Employés', 'fa-solid fa-person-digging', User::class)
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Annonces', 'fa-solid fa-car', Ad::class)
         ->setPermission('ROLE_USER');
-        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
-        ->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Services', 'fa-solid fa-screwdriver-wrench', Service::class)
+        ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Horaires d\'ouverture', 'fa-solid fa-calendar-days', OpeningHours::class)
         ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
+        ->setPermission('ROLE_USER');
     }
 }
