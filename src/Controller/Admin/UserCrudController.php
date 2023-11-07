@@ -45,8 +45,8 @@ class UserCrudController extends AbstractCrudController
             EmailField::new('email'),
         ];
 
-        $password = TextField::new('password')
-            ->setFormType(RepeatedType::class)
+        
+        $password = TextField::new('password')->setFormType(RepeatedType::class)
             ->setFormTypeOptions([
                 'type' => PasswordType::class,
                 'first_options' => ['label' => 'Mot de passe'],
@@ -93,8 +93,5 @@ class UserCrudController extends AbstractCrudController
             $form->getData()->setPassword($hash);
         };
     }
-
-
-
-
 }
+
