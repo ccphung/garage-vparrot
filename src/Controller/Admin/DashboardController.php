@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\OpeningHours;
 use App\Entity\Review;
 use App\Entity\Service;
+use App\Entity\ServiceImage;
 use App\Entity\User;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
@@ -41,6 +42,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Horaires d\'ouverture', 'fa-solid fa-calendar-days', OpeningHours::class)
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
+        ->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Image', 'fa-solid fa-image', ServiceImage::class)
         ->setPermission('ROLE_USER');
     }
 }
