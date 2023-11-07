@@ -14,7 +14,7 @@ class Service
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $picture = null;
+    private ?string $image = null;
 
     #[ORM\Column]
     private ?int $price = null;
@@ -30,14 +30,14 @@ class Service
         return $this->id;
     }
 
-    public function getPicture(): ?string
+    public function getimage(): ?string
     {
-        return $this->picture;
+        return $this->image;
     }
 
-    public function setPicture(string $picture): static
+    public function setimage(string $image): static
     {
-        $this->picture = $picture;
+        $this->image = $image;
 
         return $this;
     }
