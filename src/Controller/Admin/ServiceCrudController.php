@@ -3,10 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Service;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, CollectionField, MoneyField};
 
 class ServiceCrudController extends AbstractCrudController
 {
@@ -15,14 +14,27 @@ class ServiceCrudController extends AbstractCrudController
         return Service::class;
     }
 
-    /*
+    public function configureCrud(Crud $crud) : Crud 
+    {
+        return $crud
+            ->setEntityLabelInPlural('Serivces')
+            ->setEntityLabelInSingular('Serivce')
+
+            ->setPageTitle("index", "Page d'administration des services")
+            ->setPageTitle("edit", "Page de modification d'un service");
+    }
+
+
+    
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+        $fields = [
+            IdField::new('id')
+                ->hideOnForm(),
+            MoneyField::new('price')->setCurrency('EUR'),
+            TextField::new('description'),
+            CollectionField::new('image')
         ];
+        return $fields;
     }
-    */
 }
