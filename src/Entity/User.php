@@ -47,6 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Service::class)]
     private Collection $service;
 
+
     public function __construct()
     {
         $this->review = new ArrayCollection();
