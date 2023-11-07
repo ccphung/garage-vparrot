@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\AdRepository;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -168,4 +169,9 @@ class Ad
 
         return $this;
     }
+
+    public function __construct() {
+        $this->setCreatedAt(new DateTimeImmutable());
+    }
+
 }
