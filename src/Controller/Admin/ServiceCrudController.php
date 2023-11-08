@@ -25,18 +25,21 @@ class ServiceCrudController extends AbstractCrudController
             ->setPageTitle("edit", "Page de modification d'un service");
     }
 
-
-    
     public function configureFields(string $pageName): iterable
     {
         $fields = [
             IdField::new('id')
                 ->hideOnForm(),
-            TextField::new('title'),
-            MoneyField::new('price')->setCurrency('EUR'),
-            TextField::new('content'),
+            TextField::new('title')
+                ->setLabel('Titre'),
+            MoneyField::new('price')->setCurrency('EUR')
+                ->setLabel('Prix'),
+            TextField::new('content')
+                ->setLabel('Description'),
             CollectionField::new('ServiceImage')
+                ->setLabel('Image')
                 ->setEntryType(ServiceImageType::class)
+                ->hideOnIndex(),
         ];
         return $fields;
     }
