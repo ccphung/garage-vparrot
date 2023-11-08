@@ -32,11 +32,16 @@ class AdCrudController extends AbstractCrudController
         $fields = [
             IdField::new('id')
                 ->hideOnForm(),
-            TextField::new('title'),
-            TextField::new('brand'),
-            MoneyField::new('price')->setCurrency('EUR'),
-            IntegerField::new('kilometers'),
-            DateField::new('registrationYear')->renderAsNativeWidget(),
+            TextField::new('title')
+                ->setLabel('Titre'),
+            TextField::new('brand')
+                ->setLabel('Marque'),
+            MoneyField::new('price')->setCurrency('EUR')
+                ->setLabel('Prix'),
+            IntegerField::new('kilometers')
+                ->setLabel('Kilométrage'),
+            DateField::new('registrationYear')->renderAsNativeWidget()
+                ->setLabel('Année de mise en circulation'),
             DateField::new('createdAt')
                 ->hideOnForm(),
         ];
