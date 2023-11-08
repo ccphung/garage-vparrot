@@ -7,14 +7,21 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ServiceRepository::class)]
+#[Vich\Uploadable]
 class Service
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[Vich\UploadableField (mapping: 'services', fileNameProperty: 'imageName', size: 'size')]
+    private ?File $imageFile = null;
+
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -28,8 +35,14 @@ class Service
     #[ORM\ManyToOne(inversedBy: 'service')]
     private ?User $user = null;
 
-    #[ORM\OneToMany(mappedBy: 'service', targetEntity: ServiceImage::class, orphanRemoval: true, cascade : ['persist'])]
-    private Collection $serviceImage;
+    #[ORM\Column(length: 255)]
+    private ?string $imageName = null;
+
+    #[ORM\Column]
+    private ?int $size = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $updatedAt = null;
 
     public function __construct()
     {
@@ -40,6 +53,17 @@ class Service
     {
         return $this->id;
     }
+
+    public function setImageFile(?File $imageFile) : void
+    {
+        $this->imageFile = $imageFile;
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function getImageFile(): ?File {
+        return $this->imageFile;
+    }
+
 
     public function getTitle(): ?string
     {
@@ -89,32 +113,38 @@ class Service
         return $this;
     }
 
-    /**
-     * @return Collection<int, ServiceImage>
-     */
-    public function getserviceImage(): Collection
+    public function getImageName(): ?string
     {
-        return $this->serviceImage;
+        return $this->imageName;
     }
 
-    public function addServiceImage(ServiceImage $serviceImage): static
+    public function setImageName(string $imageName): static
     {
-        if (!$this->serviceImage->contains($serviceImage)) {
-            $this->serviceImage->add($serviceImage);
-            $serviceImage->setService($this);
-        }
+        $this->imageName = $imageName;
 
         return $this;
     }
 
-    public function removeServiceImage(ServiceImage $serviceImage): static
+    public function getSize(): ?int
     {
-        if ($this->serviceImage->removeElement($serviceImage)) {
-            // set the owning side to null (unless already changed)
-            if ($serviceImage->getService() === $this) {
-                $serviceImage->setService(null);
-            }
-        }
+        return $this->size;
+    }
+
+    public function setSize(int $size): static
+    {
+        $this->size = $size;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
