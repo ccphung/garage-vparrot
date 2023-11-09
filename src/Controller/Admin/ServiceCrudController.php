@@ -4,12 +4,12 @@ namespace App\Controller\Admin;
 
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use App\Entity\Service;
-use App\Form\Type\ServiceImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, CollectionField, MoneyField, ImageField, TextareaField, IntegerField};
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, MoneyField, IntegerField, TextEditorField};
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
+#[IsGranted('ROLE_ADMIN')]
 class ServiceCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -38,7 +38,7 @@ class ServiceCrudController extends AbstractCrudController
                 ->setCurrency('EUR')
                 ->setNumDecimals(0)
                 ->setLabel('Prix'),
-            TextField::new('content')
+            TextEditorField::new('content')
                 ->setLabel('Description'),
             TextField::new('imageName')
                 ->setLabel('Nom de l\'image'),
