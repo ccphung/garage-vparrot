@@ -14,32 +14,7 @@
     </header>
     <main>
     {# Section services #}
-        <section>
-            <div class="container mt-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-xs-6 col-md-5 col-lg-3">
-                        <div class="text-center">
-                            <h2 class="section-title"><span class="text-blue">Nos services</span> de réparation et entretien</h2>
-                            <p>Achetez maintenant et payez plus tard & en plusieurs fois</p>
-                            <p>Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de  remboursement avant de vous engager.</p>
-                            <a href="#" class="btn btn-service">Nous contacter pour tout renseignement</a>
-                        </div>
-                    </div>
-            {% for service in services %}
-                    <div class="col-xs-6 col-md-5 col-lg-3">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset(vich_uploader_asset(service)) }}" alt="{{ service.imageName }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{service.title}}</h5>
-                                <div class="card-text">
-                                    <p class="text-blue">A partir de {{service.price}} EUR</p>
-                                    <p>{{service.content}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            {% endfor %}
-        </section>
+        {% include "home/services.html.twig" %}
     {# Section Used Car #}
         <section class="used-car-container">
             <div class="text-center">
