@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\ServiceRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
@@ -42,11 +41,6 @@ class Service
 
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
-
-    public function __construct()
-    {
-        $this->serviceImage = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
