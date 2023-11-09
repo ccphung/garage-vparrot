@@ -3,10 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Ad;
-use DateTimeImmutable;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateField, AssociationField, MoneyField, IntegerField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateField, MoneyField, IntegerField};
 
 class AdCrudController extends AbstractCrudController
 {
@@ -25,8 +24,6 @@ class AdCrudController extends AbstractCrudController
             ->setPageTitle("edit", "Page de modification de l'annonce");
     }
 
-
-    
     public function configureFields(string $pageName): iterable
     {
         $fields = [
