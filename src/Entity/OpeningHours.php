@@ -79,10 +79,10 @@ class OpeningHours
     #[ORM\Column(length: 5)]
     private ?string $sat_am_close = null;
 
-    #[ORM\Column(length: 5)]
+    #[ORM\Column(length: 5, nullable: true)]
     private ?string $sat_pm_open = null;
 
-    #[ORM\Column(length: 5)]
+    #[ORM\Column(length: 5, nullable: true)]
     private ?string $sat_pm_close = null;
 
     #[ORM\Column(length: 10)]
@@ -362,7 +362,7 @@ class OpeningHours
         return $this->sat_pm_open;
     }
 
-    public function setSatPmOpen(string $sat_pm_open): static
+    public function setSatPmOpen(?string $sat_pm_open): static
     {
         $this->sat_pm_open = $sat_pm_open;
 
@@ -374,7 +374,7 @@ class OpeningHours
         return $this->sat_pm_close;
     }
 
-    public function setSatPmClose(string $sat_pm_close): static
+    public function setSatPmClose(?string $sat_pm_close): static
     {
         $this->sat_pm_close = $sat_pm_close;
 
