@@ -25,20 +25,20 @@
                             <a href="#" class="btn btn-service">Nous contacter pour tout renseignement</a>
                         </div>
                     </div>
-        {% for service in services %}
+            {% for service in services %}
                     <div class="col-xs-6 col-md-5 col-lg-3">
                         <div class="card">
-                            <img class="card-img-top" src="{{ asset(vich_uploader_asset(service)) }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset(vich_uploader_asset(service)) }}" alt="{{ service.imageName }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{service.title}}</h5>
-                                <p class="card-text">
-                                    <div class="text-blue">A partir de {{service.price}} EUR</div>
-                                    <div>{{service.content}}</div>
-                                </p>
+                                <div class="card-text">
+                                    <p class="text-blue">A partir de {{service.price}} EUR</p>
+                                    <p>{{service.content}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-        {% endfor %}
+            {% endfor %}
         </section>
     {# Section Used Car #}
         <section class="used-car-container">
