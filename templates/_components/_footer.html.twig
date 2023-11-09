@@ -9,13 +9,13 @@
             <div class="col-lg-4 col-md-12 text-white opening-hours">
                 <ul class="list-unstyled">
                     <li>Horaires d'ouverture</li>
-                    <li>lun.: 8:45-12:00, 14:00-18:00</li>
-                    <li>mar.: 8:45-12:00, 14:00-18:00</li>
-                    <li>mer.: 8:45-12:00, 14:00-18:00</li>       
-                    <li>jeu.: 8:45-12:00, 14:00-18:00</li>
-                    <li>ver.: 8:45-12:00, 14:00-18:00</li>
-                    <li>sam.: 8:45-12:00, 14:00-18:00</li>
-                    <li>dim.: Fermé</li>                    
+                    <li>lun.: {{horaires.getMonAmOpen}}-{{horaires.getMonAmClose}}, {{horaires.getMonPmOpen}}-{{horaires.getMonPmClose}}</li>
+                    <li>mar.: {{horaires.getTueAmOpen}}-{{horaires.getTueAmClose}}, {{horaires.getTuePmOpen}}-{{horaires.getTuePmClose}}</li>
+                    <li>mer.: {{horaires.getWedAmOpen}}-{{horaires.getWedAmClose}}, {{horaires.getWedPmOpen}}-{{horaires.getWedPmClose}}</li>   
+                    <li>jeu.: {{horaires.getThrAmOpen}}-{{horaires.getThrAmClose}}, {{horaires.getThrPmOpen}}-{{horaires.getThrPmClose}}</li>
+                    <li>ver.: {{horaires.getFriAmOpen}}-{{horaires.getFriAmClose}}, {{horaires.getFriPmOpen}}-{{horaires.getFriPmClose}}</li>
+                    <li>sam.: {{horaires.getSatAmOpen}}-{{horaires.getSatAmClose}}</li>
+                    <li>dim.: {{horaires.getSun}}</li>                    
                 </ul>
             </div>
         
@@ -30,4 +30,5 @@
             </div>
         </div>
     </div>
+
 </footer>
