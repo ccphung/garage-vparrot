@@ -6,7 +6,7 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 use App\Entity\Service;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, MoneyField, IntegerField, TextEditorField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, MoneyField, IntegerField, TextareaField};
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[IsGranted('ROLE_ADMIN')]
@@ -37,8 +37,9 @@ class ServiceCrudController extends AbstractCrudController
             MoneyField::new('price')
                 ->setCurrency('EUR')
                 ->setNumDecimals(0)
-                ->setLabel('Prix'),
-            TextEditorField::new('content')
+                ->setLabel('Prix')
+                ->setCustomOption('storedAsCents', false),
+            TextareaField::new('content')
                 ->setLabel('Description'),
             TextField::new('imageName')
                 ->setLabel('Nom de l\'image'),
