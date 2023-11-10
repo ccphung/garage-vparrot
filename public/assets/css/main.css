@@ -16,7 +16,7 @@ nav {
 }
 
 .nav-link:hover {
-    color: #FFDE59;
+    color:rgb(114, 87, 233);
 }
 
 .logo-img {
@@ -53,27 +53,23 @@ header {
     filter:brightness(80%);
 }
 
-
 /* Section Services */
 .section-title{
     font-family: 'Hind Siliguri', sans-serif;
 }
 
 .text-blue {
-    color:#1e0784;
+    color:rgb(46, 18, 173);
 }
 
-.text-orange {
-    color:rgb(222, 90, 19);
+.btn-hover {
+    color: #3e17e8;
+    border: 1px solid rgb(114, 87, 233);
 }
 
-.btn-service {
-    color:#1e0784;
-    border:2px solid #1e0784;
-}
-
-.btn-service:hover {
-    background:#1e0784;
+.btn-hover:hover {
+    background:rgb(114, 87, 233);
+    border: 0px;
     color: #fff;
 }
 
@@ -81,17 +77,6 @@ header {
 .used-car-container {
     margin-top: 50px;
 }
-
-.btn-car {
-    color:rgb(222, 90, 19);
-    border:2px solid rgb(222, 90, 19);
-}
-
-.btn-car:hover {
-    background:rgb(222, 90, 19);
-    color: #fff;
-}
-
 
 /* Footer */
 footer {
@@ -128,7 +113,6 @@ footer {
         display:none;
     }
 }
-
 
 @media (min-height: 320px){
     .header-container {
