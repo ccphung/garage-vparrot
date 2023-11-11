@@ -22,7 +22,7 @@ vich_uploader:
                 options: { property: 'imageRename1'}
            directory_namer:
                 service: vich_uploader.namer_directory_property
-                options: { property: 'title', transliterate: true } method
+                options: { property: 'id', transliterate: true } method
            inject_on_load: false
            delete_on_update: true
            delete_on_remove: true
@@ -34,7 +34,7 @@ vich_uploader:
                 options: { property: 'imageRename2'}
            directory_namer:
                 service: vich_uploader.namer_directory_property
-                options: { property: 'title', transliterate: true }
+                options: { property: 'id', transliterate: true }
            inject_on_load: false
            delete_on_update: true
            delete_on_remove: true
@@ -47,7 +47,7 @@ vich_uploader:
                 options: { property: 'imageRename3'}
            directory_namer:
                 service: vich_uploader.namer_directory_property
-                options: { property: 'title', transliterate: true }
+                options: { property: 'id', transliterate: true }
            inject_on_load: false
            delete_on_update: true
            delete_on_remove: true
