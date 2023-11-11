@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Ad;
 use App\Repository\AdRepository;
 use App\Repository\OpeningHoursRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,5 +18,15 @@ class AdController extends AbstractController
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
             'annonces' => $adRepository->findBy([], ['id' => 'asc']),
         ]);
+    }
+
+    #[Route('/annonce/{title}', name: 'details')]
+    public function details(Ad $ad, OpeningHoursRepository $openingHours): Response
+    {
+        return $this->render('ad/detail.html.twig', [
+            'ad' => $ad,
+            'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
+        ]);
+                
     }
 }

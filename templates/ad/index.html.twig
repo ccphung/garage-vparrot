@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="container">
+        <section class="row">
+            <div class="col-12">
+                <h1>Nos voitures d'occasion</h1>
+            </div>
+            {% for annonce in annonces %}
+                <div class="col-xs-6 col-md-4 col-lg-3">
+                    <article class="card h-100">
+                    <img class="card-img-top" src="{{ asset('images/ads/'~annonce.getTile~'/'~annonce.imageRename3~'.png') }}" alt="test">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ annonce.title}}</h2>
+                            <p class="cart-text">Marque : {{annonce.brand}}</p>
+                            <p class="cart-text">Prix : {{annonce.price}} €</p>
+                            <p class="cart-text">Kilométrage : {{annonce.kilometers}}</p>
+                            <p class="cart-text">Année de mise en cirulation : {{annonce.registrationYear|date('Y')}}</p>
+                            <a href="" class="btn">Voir l'annonce</a>
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+
+{% endblock %}
