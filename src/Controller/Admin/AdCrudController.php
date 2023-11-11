@@ -59,7 +59,7 @@ class AdCrudController extends AbstractCrudController
                 ->hideOnIndex(),
             FormField::addFieldset(),
             TextField::new('imageRename2')
-                ->setLabel('Nom de l\'image 2')
+                ->setLabel('Nom de l\'image 2 (choisir des noms différents)')
                 ->hideOnIndex(),
             TextField::new('imageFile2')
                 ->setFormType(VichFileType::class)
@@ -68,7 +68,7 @@ class AdCrudController extends AbstractCrudController
 
             FormField::addFieldset(),
             TextField::new('imageRename3')
-                ->setLabel('Nom de l\'image 3')
+                ->setLabel('Nom de l\'image 3 (choisir des noms différents)')
                 ->hideOnIndex(),
             TextField::new('imageFile3')
                 ->setFormType(VichFileType::class)
