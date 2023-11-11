@@ -14,15 +14,40 @@ vich_uploader:
            delete_on_update: false
            delete_on_remove: true
         
-       ads:
+       ads1:
            uri_prefix: /images/ads
            upload_destination: '%kernel.project_dir%/public/images/ads'
-           namer: vich_uploader.namer_uniqid
+           namer:
+                service: Vich\UploaderBundle\Naming\PropertyNamer
+                options: { property: 'imageRename1'}
            directory_namer:
                 service: vich_uploader.namer_directory_property
-                options: { property: 'slug', transliterate: true } # supposing that the object contains a "slug" property or a "getSlug" method
+                options: { property: 'title', transliterate: true } method
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true
+       ads2:
+           uri_prefix: /images/ads
+           upload_destination: '%kernel.project_dir%/public/images/ads'
+           namer:
+                service: Vich\UploaderBundle\Naming\PropertyNamer
+                options: { property: 'imageRename2'}
+           directory_namer:
+                service: vich_uploader.namer_directory_property
+                options: { property: 'title', transliterate: true }
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true
 
-
+       ads3:
+           uri_prefix: /images/ads
+           upload_destination: '%kernel.project_dir%/public/images/ads'
+           namer:
+                service: Vich\UploaderBundle\Naming\PropertyNamer
+                options: { property: 'imageRename3'}
+           directory_namer:
+                service: vich_uploader.namer_directory_property
+                options: { property: 'title', transliterate: true }
            inject_on_load: false
            delete_on_update: true
            delete_on_remove: true
