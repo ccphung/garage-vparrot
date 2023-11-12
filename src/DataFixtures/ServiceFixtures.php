@@ -38,8 +38,8 @@ class ServiceFixtures extends Fixture
             $carrosserie->setPrice('120');
             $carrosserie->setImageFile(new UploadedFile('public/images/services/reparation-carrosserie.png','reparation-carrosserie.png','png', UPLOAD_ERR_OK, true));
             $carrosserie->setUpdatedAt(new DateTimeImmutable());
-
             $manager->persist($carrosserie);
+
             $manager->flush();
         }
 }
