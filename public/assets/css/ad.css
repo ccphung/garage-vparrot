@@ -1,13 +1,27 @@
+/* Card Title */
 .ad-title {
-    font-family: 'Lato', sans-serif;
+    color:rgb(46, 18, 173);
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-bottom: 0px;
+}
+
+
+/* Button "voir l'annonce" */
+.ad-btn {
+    color:rgb(46, 18, 173);
+    border: 1px solid rgb(46, 18, 173);
+    background: white;
+}
+
+.ad-btn a{
     color:rgb(46, 18, 173);
 }
 
-.ad-btn {
-    color:rgb(46, 18, 173);
-    border: 2px solid rgb(46, 18, 173);
-    background: white;
+.ad-btn:hover {
+    background: rgba(46, 18, 173, 0.331);
 }
+
+/* Button back */
 
 .back-btn {
     color:rgb(173, 114, 18);
@@ -16,34 +30,19 @@
 }
 
 .back-btn:hover {
-    background:rgb(173, 114, 18);
+    background:rgba(173, 114, 18, 0.202);
 }
-
 
 .back-btn a {
     color:rgb(173, 114, 18);
 }
 
-.back-btn a:hover{
-    color: white;
-}
-
-
-.ad-btn a {
-    color:rgb(46, 18, 173);
-}
-
-.ad-btn:hover {
-    background:rgb(46, 18, 173);
-}
-
-.ad-btn a:hover {
-    color: #fff;
-}
+/* Price */
 
 .ad-price {
-    color:rgb(46, 18, 173);
-    margin-bottom: 0px;
+    color:rgb(173, 114, 18);
+    margin-top: 0px;
+
 }
 
 .ad-detail {

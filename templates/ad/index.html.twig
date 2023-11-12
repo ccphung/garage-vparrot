@@ -4,15 +4,15 @@
 
 {% block body %}
     <main class="container">
-        <section class="row">
+        <section class="row d-flex justify-content-center">
             {% for annonce in annonces %}
-                <div class="col-xs-6 col-md-6 col-lg-5 mt-5">
+                <div class="col-xs-6 col-md-6 col-lg-4 mt-5">
                     <article class="card w-100">
                     <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
                         <div class="card-body">
                             <h2 class="card-title ad-title">{{ annonce.title }}</h2>
                             <p class="cart-text ad-price">Prix : {{annonce.price}} €</p>
-                            <span class="ad-detail">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}}</span> 
+                            <div class="ad-detail">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}} - {{annonce.energy}} </div> 
                             </br>
                             <button class="ad-btn mt-2">
                                 <a href="{{ path('details', {"title": annonce.title})}}" class="text-decoration-none">Voir l'annonce</a>
