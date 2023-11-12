@@ -28,7 +28,7 @@ class AdCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         $fields = [
-            FormField::addTab('Détails de l\'annonce'),
+            FormField::addTab('Détails l\'annonce'),
             IdField::new('id')
                 ->hideOnForm(),
             TextField::new('title')
@@ -45,7 +45,25 @@ class AdCrudController extends AbstractCrudController
             DateField::new('registrationYear')->renderAsNativeWidget()
                 ->setLabel('Année de mise en circulation'),
             DateField::new('createdAt')
+                ->setLabel('Créée le')
                 ->hideOnForm(),
+
+            FormField::addTab('Informations complémentaires'),
+            TextField::new('gearcase')
+                ->setLabel('Boîte de vitesse')
+                ->hideOnIndex(),
+            IntegerField::new('door')
+                ->setLabel('Nombre de portières')
+                ->hideOnIndex(),
+            TextField::new('color')
+                ->setLabel('Couleur')
+                ->hideOnIndex(),
+            IntegerField::new('power')
+                ->setLabel('Puissance')
+                ->hideOnIndex(),
+            TextField::new('Energy')
+                ->setLabel('Energie')
+                ->hideOnIndex(),
 
             FormField::addTab('Images'),
             FormField::addFieldset(),
