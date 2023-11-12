@@ -87,6 +87,21 @@ class Ad
     #[ORM\Column(length: 255)]
     private ?string $imageRename3 = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $gearcase = null;
+
+    #[ORM\Column]
+    private ?int $door = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $color = null;
+
+    #[ORM\Column]
+    private ?int $power = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $energy = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -298,21 +313,21 @@ class Ad
         return $this->updatedAt3;
     }
     
-    public function setUpdatedAt1(\DateTimeImmutable $updatedAt1): static
+    public function setUpdatedAt1(?\DateTimeImmutable $updatedAt1): static
     {
         $this->updatedAt1 = $updatedAt1;
 
         return $this;
     }
 
-    public function setUpdatedAt2(\DateTimeImmutable $updatedAt2): static
+    public function setUpdatedAt2(?\DateTimeImmutable $updatedAt2): static
     {
         $this->updatedAt2 = $updatedAt2;
 
         return $this;
     }
 
-    public function setUpdatedAt3 (\DateTimeImmutable $updatedAt3): static
+    public function setUpdatedAt3 (?\DateTimeImmutable $updatedAt3): static
     {
         $this->updatedAt3 = $updatedAt3;
 
@@ -351,6 +366,66 @@ class Ad
     public function setImageRename3(string $imageRename3): static
     {
         $this->imageRename3 = $imageRename3;
+
+        return $this;
+    }
+
+    public function getGearcase(): ?string
+    {
+        return $this->gearcase;
+    }
+
+    public function setGearcase(string $gearcase): static
+    {
+        $this->gearcase = $gearcase;
+
+        return $this;
+    }
+
+    public function getDoor(): ?int
+    {
+        return $this->door;
+    }
+
+    public function setDoor(int $door): static
+    {
+        $this->door = $door;
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): static
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    public function getPower(): ?int
+    {
+        return $this->power;
+    }
+
+    public function setPower(int $power): static
+    {
+        $this->power = $power;
+
+        return $this;
+    }
+
+    public function getEnergy(): ?string
+    {
+        return $this->energy;
+    }
+
+    public function setEnergy(string $energy): static
+    {
+        $this->energy = $energy;
 
         return $this;
     }
