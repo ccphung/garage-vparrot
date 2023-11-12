@@ -1,23 +1,22 @@
 {% extends 'base.html.twig' %}
 
+{% block title %} Voitures d'occasion {% endblock %}
+
 {% block body %}
     <main class="container">
         <section class="row">
-            <div class="col-12">
-                <h1>Nos voitures d'occasion</h1>
-            </div>
             {% for annonce in annonces %}
-                <div class="col-xs-6 col-md-4 col-lg-3">
-                    <article class="card h-100">
-
-                    <img class="card-img-top" src="{{ asset('images/ads/'~annonce.getTitle~'/'~annonce.imageRename3~'.png') }}" alt="test">
+                <div class="col-xs-6 col-md-6 col-lg-5 mt-5">
+                    <article class="card w-100">
+                    <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
                         <div class="card-body">
-                            <h2 class="card-title">{{ annonce.title}}</h2>
-                            <p class="cart-text">Marque : {{annonce.brand}}</p>
-                            <p class="cart-text">Prix : {{annonce.price}} €</p>
-                            <p class="cart-text">Kilométrage : {{annonce.kilometers}}</p>
-                            <p class="cart-text">Année de mise en cirulation : {{annonce.registrationYear|date('Y')}}</p>
-                            <a href="{{ path('details', {"title": annonce.title})}}" class="btn" >Voir l'annonce</a>
+                            <h2 class="card-title ad-title">{{ annonce.title }}</h2>
+                            <p class="cart-text ad-price">Prix : {{annonce.price}} €</p>
+                            <span class="ad-detail">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}}</span> 
+                            </br>
+                            <button class="ad-btn mt-2">
+                                <a href="{{ path('details', {"title": annonce.title})}}" class="text-decoration-none">Voir l'annonce</a>
+                            </button>
                         </div>
                     </article>
                 </div>
