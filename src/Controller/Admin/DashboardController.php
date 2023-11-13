@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Ad;
+use App\Entity\Contact;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -42,7 +43,7 @@ class DashboardController extends AbstractDashboardController
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
         ->setPermission('ROLE_USER');
-        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
+        yield MenuItem::linkToCrud('Contact', 'fa-solid fa-person', Contact::class)
         ->setPermission('ROLE_USER');
     }
 }
