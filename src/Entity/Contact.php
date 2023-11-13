@@ -23,7 +23,7 @@ class Contact
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 10, nullable: true)]
+    #[ORM\Column(length: 20, nullable: true)]
     private ?string $phoneNumber = null;
 
     #[ORM\Column]
