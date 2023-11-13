@@ -6,6 +6,17 @@
     <button class="yellow-btn mt-5">    
         <a href="{{ path('app_ad') }}" class="text-decoration-none"> < Revenir aux annonces</a>
     </button>
+
+    {# Confirmation form sent #}
+    <div class="container">
+        {% for message in app.flashes('success')%}
+            <div class="alert alert-success mt-4">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+
+    {# Ad details #}
     <main class="container mt-3">
         <section class="row d-flex justify-content-center">
             <div class="col-lg-6 col-md-8 col-sm-12">
@@ -31,7 +42,6 @@
                     </button>
                     </div>
                 </div>
-
                 <div class="col-lg-6 col-md-8 col-sm-12">
                     <div class="card h-100">                         
                         <div class="card-body">
@@ -57,33 +67,26 @@
                                 </div>
                             </div>
                         </div>
-                    
                     </div>
                 </div>
         </section>
+
+        {# Contact form #}
         <section>
             <div class="container">
-                {% for message in app.flashes('success')%}
-                    <div class="alert alert-success mt-4">
-                        {{ message }}
-                    
-                {% endfor %}
-
-                <div class="container">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-6 col-md-8 col-sm-12">
-                            <h2 class='mt-5 text-center'>Nous contacter</h2>
-                            {{ form_start(form) }}
-                                {{ form_errors(form) }}
-                                {{ form_row(form.firstName) }}
-                                {{ form_row(form.lastName) }}
-                                {{ form_row(form.email) }}
-                                {{ form_row(form.phoneNumber) }}
-                                {{ form_row(form.subject, {'value' : ad.getTitle() }) }}
-                                {{ form_row(form.message) }}
-                                {{ form_row(form.submit)}}
-                            {{ form_end(form)}}
-                        </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6 col-md-8 col-sm-12">
+                        <h2 class='mt-5 text-center'>Nous contacter</h2>
+                        {{ form_start(form) }}
+                            {{ form_errors(form) }}
+                            {{ form_row(form.firstName) }}
+                            {{ form_row(form.lastName) }}
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.phoneNumber) }}
+                            {{ form_row(form.subject, {'value' : ad.getTitle() }) }}
+                            {{ form_row(form.message) }}
+                            {{ form_row(form.submit)}}
+                        {{ form_end(form)}}
                     </div>
                 </div>
             </div>
