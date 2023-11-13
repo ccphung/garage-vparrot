@@ -9,10 +9,12 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: AdRepository::class)]
 #[Vich\Uploadable]
 
+#[UniqueEntity('title')]
 class Ad
 {
     #[ORM\Id]
@@ -30,7 +32,7 @@ class Ad
     private ?File $imageFile3 = null;
 
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique:true)]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
