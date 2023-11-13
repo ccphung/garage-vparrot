@@ -21,28 +21,10 @@
     background: rgba(46, 18, 173, 0.331);
 }
 
-/* Button back */
-
-.back-btn {
-    color:rgb(173, 114, 18);
-    border: 2px solid rgb(173, 114, 18);
-    background: white;
-}
-
-.back-btn:hover {
-    background:rgba(173, 114, 18, 0.202);
-}
-
-.back-btn a {
-    color:rgb(173, 114, 18);
-}
-
 /* Price */
-
 .ad-price {
     color:rgb(173, 114, 18);
     margin-top: 0px;
-
 }
 
 .ad-detail {

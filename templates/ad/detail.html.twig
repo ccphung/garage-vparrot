@@ -3,13 +3,12 @@
 {% block title %} Annonce {{ ad.title }} {% endblock %}
 
 {% block body %}
-    <button class="back-btn mt-5">    
+    <button class="yellow-btn mt-5">    
         <a href="{{ path('app_ad') }}" class="text-decoration-none"> < Revenir aux annonces</a>
     </button>
-    <main class="container">
-        <section class="row">
-            <h1 class="text-center"> Annonce {{ ad.title }} </h1> 
-            <div class="col-6">
+    <main class="container mt-3">
+        <section class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12">
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -33,39 +32,61 @@
                     </div>
                 </div>
 
-                <div class="col-6">
-                    <div class="card h-100">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                    <div class="card h-100">                         
                         <div class="card-body">
-                            <h2 class="card-title">{{ ad.title}}</h2>
-                            <p class="cart-text">Marque : {{ad.brand}}</p>
-                            <p class="cart-text">Prix : {{ad.price}} €</p>
-                            <p class="cart-text">Kilométrage : {{ad.kilometers}}</p>
-                    <p class="cart-text">Année de mise en cirulation : {{ad.registrationYear|date('Y')}}</p>
+                            <h2 class="card-title text-center">{{ ad.title }}</h2>
+                            <h4 class="text-center ad-price">Prix : </span>{{ad.price}} €</h4>
+                            <div class="container">
+                                <div class="row mt-5">
+                                    <div class="col-6">
+                                        <p class="cart-text"><i class="fa-solid fa-car"></i> <span class="fw-bold">Marque : </span>{{ad.brand}}</p>
+                                        <p class="cart-text"><i class="fa-solid fa-earth-americas"></i><span class="fw-bold"> Kilométrage : </span>{{ad.kilometers}} km</p>
+                                        <p class="cart-text">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                            <span class="fw-bold">Année :</span> {{ad.registrationYear|date('Y')}}
+                                        </p>
+                                        <p class="cart-text"><i class="fa-solid fa-gears"></i><span class="fw-bold"> Boîte de vitesse : </span>{{ad.gearcase}}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="cart-text"><i class="fa-solid fa-door-closed"></i> <span class="fw-bold"> Nombre de portes : </span>{{ad.door}}</p>
+                                        <p class="cart-text"><i class="fa-solid fa-horse"></i> <span class="fw-bold"> Puissace : </span>{{ad.power}} CV</p>
+                                        <p class="cart-text"><i class="fa-solid fa-oil-can"></i><span class="fw-bold"> Carburant : </span>{{ad.energy}}</p>
+                                        <p class="cart-text"><i class="fa-solid fa-circle"></i> <span class="fw-bold"> Couleur : </span>{{ad.color}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
                 </div>
-            </div>
-        </div>
         </section>
         <section>
             <div class="container">
                 {% for message in app.flashes('success')%}
-            <div class="alert alert-success mt-4">
-                {{ message }}
+                    <div class="alert alert-success mt-4">
+                        {{ message }}
+                    
+                {% endfor %}
+
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 col-md-8 col-sm-12">
+                            <h2 class='mt-5 text-center'>Nous contacter</h2>
+                            {{ form_start(form) }}
+                                {{ form_errors(form) }}
+                                {{ form_row(form.firstName) }}
+                                {{ form_row(form.lastName) }}
+                                {{ form_row(form.email) }}
+                                {{ form_row(form.phoneNumber) }}
+                                {{ form_row(form.subject, {'value' : ad.getTitle() }) }}
+                                {{ form_row(form.message) }}
+                                {{ form_row(form.submit)}}
+                            {{ form_end(form)}}
+                        </div>
+                    </div>
+                </div>
             </div>
-            {% endfor %}
-            <h1>Formulaire de contact</h1>
-
-
-        {{ form_start(form) }}
-            {{ form_errors(form) }}
-            {{ form_row(form.firstName) }}
-            {{ form_row(form.lastName) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.phoneNumber) }}
-            {{ form_row(form.subject, {'value' : ad.getTitle() }) }}
-            {{ form_row(form.message) }}
-            {{ form_row(form.submit)}}
-        {{ form_end(form) }}
-    </div>
         </section>
     </main>
 {% endblock %}
