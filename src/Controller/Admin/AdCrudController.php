@@ -7,7 +7,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateField, MoneyField, IntegerField, FormField};
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
+#[AttributeIsGranted('ROLE_USER')]
 class AdCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

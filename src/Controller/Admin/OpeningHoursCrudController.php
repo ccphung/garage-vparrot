@@ -6,9 +6,8 @@ use App\Entity\OpeningHours;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, FormField, IntegerField, TextareaField};
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[IsGranted('ROLE_ADMIN')]
+#[AttributeIsGranted('ROLE_ADMIN')]
 class OpeningHoursCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

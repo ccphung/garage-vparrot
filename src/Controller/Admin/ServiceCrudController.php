@@ -7,9 +7,9 @@ use App\Entity\Service;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, MoneyField, IntegerField, TextareaField};
-use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
-#[IsGranted('ROLE_ADMIN')]
+#[AttributeIsGranted('ROLE_ADMIN')]
 class ServiceCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
