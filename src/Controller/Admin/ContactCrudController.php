@@ -37,7 +37,7 @@ class ContactCrudController extends AbstractCrudController
             TextField::new('subject')
                 ->setLabel('Sujet'),
             TextField::new('message')
-                ->setLabel('message'),
+                ->setLabel('Message'),
             DateField::new('createdAt')
                 ->setLabel('Date'),
             BooleanField::new('isProcessed')
