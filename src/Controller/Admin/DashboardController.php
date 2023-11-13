@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\OpeningHours;
 use App\Entity\Review;
 use App\Entity\Service;
-use App\Entity\ServiceImage;
 use App\Entity\User;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
