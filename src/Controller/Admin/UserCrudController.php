@@ -52,6 +52,9 @@ class UserCrudController extends AbstractCrudController
                 'first_options' => ['label' => 'Mot de passe'],
                 'second_options' => ['label' => 'Entrez à nouveau le mot de passe'],
                 'mapped' => false,
+                'constraints' => [
+                    new \Symfony\Component\Validator\Constraints\Regex("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/", "Le mot de passe doit contenir au moins 12 caractères, dont 1 majuscule, 1 miniscule, 1 caractère spécial et 1 chiffre"),
+                ]
             ])
             ->setRequired($pageName === Crud::PAGE_NEW)
             ->onlyOnForms()
