@@ -25,14 +25,26 @@ class AdController extends AbstractController
     }
 
     #[Route('/annonce/{title}', name: 'details')]
-    public function details(Ad $ad, OpeningHoursRepository $openingHours, Contact $contact): Response
+    public function details(Ad $ad, OpeningHoursRepository $openingHours, Contact $contact, Request $request, EntityManagerInterface $manager): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($contact);
+            $manager->flush();
+
             $this->addFlash(
                 'success',
                 'Votre message a bien été envoyé'
             );
+            unset($contact);
+            unset($form);
+            $contact = new Contact();
+            $form = $this->createForm(ContactType::class, $contact);
+        }
+        
 
         return $this->render('ad/detail.html.twig', [
             'ad' => $ad,
