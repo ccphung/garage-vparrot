@@ -9,15 +9,14 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
 class ContactController extends AbstractController
 {
-    #[Route('/contact', name: 'app_contact')]
     public function index(OpeningHoursRepository $openingHours, Request $request, EntityManagerInterface $manager): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
+        $form->get('Sujet')->setData('test');
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
@@ -30,13 +29,11 @@ class ContactController extends AbstractController
                 'success',
                 'Votre message a bien été envoyé'
             );
-
-            return $this->redirectToRoute('app_contact');
         }
 
         return $this->render('contact/index.html.twig', [
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 }
