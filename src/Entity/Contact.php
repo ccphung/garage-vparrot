@@ -38,9 +38,13 @@ class Contact
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $subject = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isProcessed = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
+        $this->setIsProcessed(false);
     }
 
 
@@ -141,6 +145,18 @@ class Contact
     public function setSubject(?string $subject): static
     {
         $this->subject = $subject;
+
+        return $this;
+    }
+
+    public function isIsProcessed(): ?bool
+    {
+        return $this->isProcessed;
+    }
+
+    public function setIsProcessed(?bool $isProcessed): static
+    {
+        $this->isProcessed = $isProcessed;
 
         return $this;
     }
