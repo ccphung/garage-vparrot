@@ -32,6 +32,12 @@ class Contact
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?ad $ad = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subject = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -111,6 +117,30 @@ class Contact
     public function setMessage(string $message): static
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getAd(): ?ad
+    {
+        return $this->ad;
+    }
+
+    public function setAd(?ad $ad): static
+    {
+        $this->ad = $ad;
+
+        return $this;
+    }
+
+    public function getSubject(): ?string
+    {
+        return $this->subject;
+    }
+
+    public function setSubject(?string $subject): static
+    {
+        $this->subject = $subject;
 
         return $this;
     }
