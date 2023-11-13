@@ -2,11 +2,19 @@
     <div class="container-fluid">
         <div class="row">
         {# Logo #}
-            <div class="col-lg-4 col-sm-12 d-flex justify-content-center">
-                <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="logo-footer">
+            <div class="col-lg-3 col-sm-12 d-flex justify-content-center align-items-center">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="logo-footer align-self-center">
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex justify-content-center flex-column align-items-center">
+                <ul class="list-unstyled">    
+                    <li><p class="text-white m-0">Informations</p></li>
+                    <li><p class="text-white m-0">Adresse : 153 rue des Petits Champs - 78260 Achères</p></li>
+                    <li><p class="text-white">Tél : 01 39 82 05 90</p></li>
+                    <li><a href="{{ path('app_contact') }}" class="text-white m-0">Nous contacter</a></li>
+                </ul>   
             </div>
         {# Opening hours #}
-            <div class="col-lg-4 col-md-12 text-white opening-hours">
+            <div class="col-lg-3 col-md-6 text-white opening-hours">
                 <ul class="list-unstyled">
                     <li>Horaires d'ouverture</li>
                     <li>lun.: {{horaires.getMonAmOpen}}-{{horaires.getMonAmClose}}, {{horaires.getMonPmOpen}}-{{horaires.getMonPmClose}}</li>
@@ -20,7 +28,7 @@
             </div>
         
         {# Socials #}
-            <div class="col-lg-4 col-md-12 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-lg-3 col-md-12 d-flex flex-column justify-content-center align-items-center">
                 <p class="text-center text-white socials-text">Suivez-nous sur les réseaux !</p>
                 <div class="socials">
                     <img class="m-2" src="{{ asset('images/logo/instagram.svg') }}" alt="logo instagram">
