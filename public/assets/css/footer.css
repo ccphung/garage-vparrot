@@ -1,0 +1,23 @@
+
+/* Footer */
+footer {
+    background: black;
+    margin-top: 50px;
+    padding: 30px;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+}
+.socials, .opening-hours {
+    display:flex;
+    justify-content: center;
+}
+
+.socials {
+    width: 3em;
+    height: 3em;
+}
+
+.logo-footer {
+    width: 100px;
+    height: 100px;
+}

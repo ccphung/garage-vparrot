@@ -1,0 +1,28 @@
+/* Navigation */
+
+nav {
+    background: black;
+    position: absolute;
+
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    color:rgb(114, 87, 233);
+}
+
+.logo-img {
+    width: 50px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+}
+
+

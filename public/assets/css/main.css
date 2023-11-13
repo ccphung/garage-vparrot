@@ -4,31 +4,6 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
-/* Navigation */
-
-nav {
-    background: black;
-    position: absolute;
-}
-
-.nav-link {
-    color: #fff;
-}
-
-.nav-link:hover {
-    color:rgb(114, 87, 233);
-}
-
-.logo-img {
-    width: 50px;
-}
-
-.logo-container {
-    position: absolute;
-    left: 50%;
-}
-
-
 /* Header */
 header {
     display: flex;
@@ -76,21 +51,6 @@ header {
 /* Section Used Car */
 .used-car-container {
     margin-top: 50px;
-}
-
-/* Footer */
-footer {
-    background: black;
-    margin-top: 50px;
-    padding: 30px;
-}
-.socials, .opening-hours {
-    display:flex;
-    justify-content: center;
-}
-
-.logo-footer {
-    width: 200px;
 }
 
 /* Media queries */
