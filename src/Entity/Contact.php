@@ -33,7 +33,7 @@ class Contact
     private ?string $message = null;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?ad $ad = null;
+    private ?Ad $ad = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $subject = null;
@@ -125,12 +125,12 @@ class Contact
         return $this;
     }
 
-    public function getAd(): ?ad
+    public function getAd(): ?Ad
     {
         return $this->ad;
     }
 
-    public function setAd(?ad $ad): static
+    public function setAd(?Ad $ad): static
     {
         $this->ad = $ad;
 
