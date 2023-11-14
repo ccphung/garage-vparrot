@@ -46,23 +46,23 @@
                     <div class="card h-100">                         
                         <div class="card-body">
                             <h2 class="card-title text-center">{{ ad.title }}</h2>
-                            <h4 class="text-center ad-price">Prix : </span>{{ad.price}} €</h4>
+                            <h4 class="text-center ad-price text-blue">Prix : </span>{{ad.price}} €</h4>
                             <div class="container">
                                 <div class="row mt-5">
                                     <div class="col-6">
-                                        <p class="cart-text"><i class="fa-solid fa-car"></i> <span class="fw-bold">Marque : </span>{{ad.brand}}</p>
-                                        <p class="cart-text"><i class="fa-solid fa-earth-americas"></i><span class="fw-bold"> Kilométrage : </span>{{ad.kilometers}} km</p>
+                                        <p class="cart-text"><i class="fa-solid fa-car"></i> Marque: <span class="fw-bold">{{ad.brand}}</span></p>
+                                        <p class="cart-text"><i class="fa-solid fa-earth-americas"></i> Kilométrage: <span class="fw-bold">{{ad.kilometers}} km</span></p>
                                         <p class="cart-text">
                                         <i class="fa-solid fa-calendar-days"></i>
-                                            <span class="fw-bold">Année :</span> {{ad.registrationYear|date('Y')}}
+                                            Année : <span class="fw-bold">{{ad.registrationYear|date('Y')}}</span>
                                         </p>
-                                        <p class="cart-text"><i class="fa-solid fa-gears"></i><span class="fw-bold"> Boîte de vitesse : </span>{{ad.gearcase}}</p>
+                                        <p class="cart-text"><i class="fa-solid fa-gears"></i> Boîte de vitesse: <span class="fw-bold">{{ad.gearcase}}</span></p>
                                     </div>
                                     <div class="col-6">
-                                        <p class="cart-text"><i class="fa-solid fa-door-closed"></i> <span class="fw-bold"> Nombre de portes : </span>{{ad.door}}</p>
-                                        <p class="cart-text"><i class="fa-solid fa-horse"></i> <span class="fw-bold"> Puissace : </span>{{ad.power}} CV</p>
-                                        <p class="cart-text"><i class="fa-solid fa-oil-can"></i><span class="fw-bold"> Carburant : </span>{{ad.energy}}</p>
-                                        <p class="cart-text"><i class="fa-solid fa-circle"></i> <span class="fw-bold"> Couleur : </span>{{ad.color}}</p>
+                                        <p class="cart-text"><i class="fa-solid fa-door-closed"></i> Nombre de portes: <span class="fw-bold">{{ad.door}}</span></p>
+                                        <p class="cart-text"><i class="fa-solid fa-horse"></i>  Puissace: <span class="fw-bold">{{ad.power}} CV</span></p>
+                                        <p class="cart-text"><i class="fa-solid fa-oil-can"></i> Carburant: <span class="fw-bold">{{ad.energy}}</span></p>
+                                        <p class="cart-text"><i class="fa-solid fa-circle"></i> Couleur: <span class="fw-bold">{{ad.color}}</span></p>
                                     </div>
                                 </div>
                             </div>
