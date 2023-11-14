@@ -10,11 +10,24 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
 #[AttributeIsGranted('ROLE_USER')]
 class ContactCrudController extends AbstractCrudController
 {
+    public function configureCrud(Crud $crud) : Crud 
+    {
+        return $crud
+            ->setEntityLabelInPlural('Demandes de contact')
+            ->setEntityLabelInSingular('Demande de contact')
+
+            ->setPageTitle("index", "Gestion des demandes de contact")
+            ->setPageTitle("edit", "Gestion de la demande de contact")
+
+            ->setPaginatorPageSize(10);
+    }
+
     public static function getEntityFqcn(): string
     {
         return Contact::class;
