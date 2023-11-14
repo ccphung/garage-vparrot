@@ -1,0 +1,62 @@
+<section class="mt-5" style="width: 20rem;">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active bg-primary">
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Ils nous recommandent</h5>
+                    <p class="card-text">Découvrez les commentaires de nos clients</p>
+                </div>
+                </div>
+            </div>
+            {% for commentaire in commentaires %}
+                <div class="carousel-item bg-primary">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            {% if commentaire.rating == 1 %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            {% elseif commentaire.rating == 2 %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            {% elseif commentaire.rating == 3 %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            {% elseif commentaire.rating == 4 %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            {% elseif commentaire.rating == 5 %}
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            {% endif %}
+                            <h5 class="card-title">{{commentaire.firstName}} {{commentaire.lastName[:1]}}.</h5>
+                            <p class="card-text">{{commentaire.comment}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+    </div>
+</section>
