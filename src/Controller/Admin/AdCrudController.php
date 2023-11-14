@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Ad;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateField, MoneyField, IntegerField, FormField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateField, MoneyField, IntegerField, FormField, BooleanField};
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
@@ -66,6 +66,18 @@ class AdCrudController extends AbstractCrudController
             TextField::new('Energy')
                 ->setLabel('Energie')
                 ->hideOnIndex(),
+
+            FormField::addTab('Options & équipements'),
+            BooleanField::new('gps')
+                ->setLabel('GPS'),
+            BooleanField::new('airConditioner')
+                ->setLabel('Climatisation'),
+            BooleanField::new('reversingCamera')
+                ->setLabel('Caméra de recul'),
+            BooleanField::new('androidAuto')
+                ->setLabel('Android Auto'),
+            BooleanField::new('speedRegulator')
+                ->setLabel('Régulateur de vitesse'),
 
             FormField::addTab('Images'),
             FormField::addFieldset(),

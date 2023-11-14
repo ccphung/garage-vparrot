@@ -103,6 +103,21 @@ class Ad
     #[ORM\Column(length: 255)]
     private ?string $energy = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $gps = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $airConditioner = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $reversingCamera = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $androidAuto = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $speedRegulator = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -225,6 +240,11 @@ class Ad
 
     public function __construct() {
         $this->setCreatedAt(new DateTimeImmutable());
+        $this->setAirConditioner(false);
+        $this->setAndroidAuto(false);
+        $this->setGps(false);
+        $this->setReversingCamera(false);
+        $this->setSpeedRegulator(false);
     }
 
     public function getImageName1(): ?string
@@ -427,6 +447,66 @@ class Ad
     public function setEnergy(string $energy): static
     {
         $this->energy = $energy;
+
+        return $this;
+    }
+
+    public function isGps(): ?bool
+    {
+        return $this->gps;
+    }
+
+    public function setGps(?bool $gps): static
+    {
+        $this->gps = $gps;
+
+        return $this;
+    }
+
+    public function isAirConditioner(): ?bool
+    {
+        return $this->airConditioner;
+    }
+
+    public function setAirConditioner(?bool $airConditioner): static
+    {
+        $this->airConditioner = $airConditioner;
+
+        return $this;
+    }
+
+    public function isReversingCamera(): ?bool
+    {
+        return $this->reversingCamera;
+    }
+
+    public function setReversingCamera(?bool $reversingCamera): static
+    {
+        $this->reversingCamera = $reversingCamera;
+
+        return $this;
+    }
+
+    public function isAndroidAuto(): ?bool
+    {
+        return $this->androidAuto;
+    }
+
+    public function setAndroidAuto(?bool $androidAuto): static
+    {
+        $this->androidAuto = $androidAuto;
+
+        return $this;
+    }
+
+    public function isSpeedRegulator(): ?bool
+    {
+        return $this->speedRegulator;
+    }
+
+    public function setSpeedRegulator(?bool $speedRegulator): static
+    {
+        $this->speedRegulator = $speedRegulator;
 
         return $this;
     }

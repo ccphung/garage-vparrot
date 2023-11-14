@@ -4,7 +4,6 @@ namespace App\DataFixtures;
 
 use App\Entity\Ad;
 use DateTime;
-use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -37,6 +36,8 @@ class AdFixtures extends Fixture
             $ad1->setImageRename1('full-pic');
             $ad1->setImageRename2('top-view');
             $ad1->setImageRename3('rear-view');
+            $ad1->setAirConditioner(true);
+            $ad1->setGps(true);
             $manager->persist($ad1);
 
             $ad2 = new Ad();
@@ -63,6 +64,8 @@ class AdFixtures extends Fixture
             $ad2->setImageRename1('first-pic');
             $ad2->setImageRename2('second-pic');
             $ad2->setImageRename3('thrid-pic');
+            $ad2->setAirConditioner(true);
+            $ad2->setAndroidAuto(true);
             $manager->persist($ad2);
 
             $ad3 = new Ad();
@@ -89,6 +92,9 @@ class AdFixtures extends Fixture
             $ad3->setImageRename1('first-pic');
             $ad3->setImageRename2('second-pic');
             $ad3->setImageRename3('thrid-pic');
+            $ad3->setAirConditioner(true);
+            $ad3->setSpeedRegulator(true);
+            $ad3->setGps(true);
             $manager->persist($ad3);
 
             $ad4 = new Ad();
@@ -115,7 +121,9 @@ class AdFixtures extends Fixture
             $ad4->setImageRename1('first-pic');
             $ad4->setImageRename2('second-pic');
             $ad4->setImageRename3('thrid-pic');
+            $ad4->setAirConditioner(true);
             $manager->persist($ad4);
+            
 
             $ad5 = new Ad();
             $ad5->setTitle('Porsche');
@@ -141,6 +149,10 @@ class AdFixtures extends Fixture
             $ad5->setImageRename1('first-pic');
             $ad5->setImageRename2('second-pic');
             $ad5->setImageRename3('thrid-pic');
+            $ad5->setAirConditioner(true);
+            $ad5->setSpeedRegulator(true);
+            $ad5->setAndroidAuto(true);
+            $ad5->setGps(true);
             $manager->persist($ad5);
 
             $ad6 = new Ad();
@@ -167,6 +179,9 @@ class AdFixtures extends Fixture
             $ad6->setImageRename1('first-pic');
             $ad6->setImageRename2('second-pic');
             $ad6->setImageRename3('thrid-pic');
+            $ad6->setAirConditioner(true);
+            $ad6->setReversingCamera(true);
+            $ad6->setGps(true);
             $manager->persist($ad6);
 
             $ad7 = new Ad();
@@ -193,6 +208,10 @@ class AdFixtures extends Fixture
             $ad7->setImageRename1('first-pic');
             $ad7->setImageRename2('second-pic');
             $ad7->setImageRename3('thrid-pic');
+            $ad7->setAirConditioner(true);
+            $ad7->setSpeedRegulator(true);
+            $ad7->setReversingCamera(true);
+            $ad7->setGps(true);
             $manager->persist($ad7);
             
             $manager->flush();

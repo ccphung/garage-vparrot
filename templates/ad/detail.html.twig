@@ -46,7 +46,8 @@
                             <h2 class="card-title text-center">{{ ad.title }}</h2>
                             <h4 class="text-center ad-price text-blue">Prix : </span>{{ad.price}} €</h4>
                             <div class="container">
-                                <div class="row mt-5">
+                                <div class="row mt-2">
+                                    <h5 class="card-title">Caractéristiques</h5>
                                     <div class="col-6">
                                         <p class="cart-text"><i class="fa-solid fa-car"></i> Marque: <span class="fw-bold">{{ad.brand}}</span></p>
                                         <p class="cart-text"><i class="fa-solid fa-earth-americas"></i> Kilométrage: <span class="fw-bold">{{ad.kilometers}} km</span></p>
@@ -61,6 +62,43 @@
                                         <p class="cart-text"><i class="fa-solid fa-horse"></i>  Puissace: <span class="fw-bold">{{ad.power}} CV</span></p>
                                         <p class="cart-text"><i class="fa-solid fa-oil-can"></i> Carburant: <span class="fw-bold">{{ad.energy}}</span></p>
                                         <p class="cart-text"><i class="fa-solid fa-circle"></i> Couleur: <span class="fw-bold">{{ad.color}}</span></p>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <h5 class="card-title">Options & Equipements</h5>
+                                        <div class="d-flex">
+                                        {% if ad.gps %}
+                                            <div class="cart-text text-center">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <p>GPS</p>
+                                            </div>
+                                        {% endif %}
+                                        {% if ad.reversingCamera %}
+                                            <div class="cart-text text-center">
+                                                <i class="fa-solid fa-video"></i>       
+                                                <p>Caméra de recul</p>
+                                            </div>
+                                        {% endif %}
+                                        {% if ad.airConditioner %}
+                                            <div class="cart-text text-center">
+                                                <i class="fa-solid fa-wind"></i>
+                                                <p>Climatisation</p>
+                                            </div>
+                                        {% endif %}
+                                        {% if ad.androidAuto %}
+                                            <div class="cart-text text-center">
+                                                <i class="fa-brands fa-android"></i>
+                                                <p>Android Auto</p>
+                                            </div>
+                                        {% endif %}
+                                        {% if ad.speedRegulator %}
+                                            <div class="cart-text text-center">
+                                                <i class="fa-solid fa-gauge"></i>
+                                                <p>Régulateur de vitesse</p>
+                                            </div>
+                                        {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
