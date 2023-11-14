@@ -49,8 +49,16 @@ header {
 }
 
 /* Section Used Car */
-.used-car-container {
-    margin-top: 50px;
+.text-yellow {
+    color:rgb(173, 114, 18);
+}
+
+.bg-carrou {
+    filter: brightness(50%);
+}
+
+.ad-redirect-btn a {
+    background:rgb(173, 114, 18);
 }
 
 /* Media queries */
