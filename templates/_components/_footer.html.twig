@@ -7,7 +7,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-12 d-flex justify-content-center flex-column align-items-center">
                 <ul class="list-unstyled">    
-                    <li><p class="text-white m-0 text-center">Informations</p></li>
+                    <li class="fw-bold"><p class="text-white m-0 text-center">Informations</p></li>
                     <li><p class="text-white m-0 text-center">Adresse : 153 rue des Petits Champs </br> 78260 Achères</p></li>
                     <li><p class="text-white text-center">Tél : 01 39 82 05 90</p></li>
                     <li class="text-center"><a href="{{ path('app_contact') }}" class="text-white m-0">Nous contacter</a></li>
@@ -16,7 +16,7 @@
         {# Opening hours #}
             <div class="col-lg-3 col-sm-6 text-white opening-hours">
                 <ul class="list-unstyled">
-                    <li>Horaires d'ouverture</li>
+                    <li class="fw-bold">Horaires d'ouverture</li>
                     <li>lun.: {{horaires.getMonAmOpen}}-{{horaires.getMonAmClose}}, {{horaires.getMonPmOpen}}-{{horaires.getMonPmClose}}</li>
                     <li>mar.: {{horaires.getTueAmOpen}}-{{horaires.getTueAmClose}}, {{horaires.getTuePmOpen}}-{{horaires.getTuePmClose}}</li>
                     <li>mer.: {{horaires.getWedAmOpen}}-{{horaires.getWedAmClose}}, {{horaires.getWedPmOpen}}-{{horaires.getWedPmClose}}</li>   
@@ -29,7 +29,7 @@
         
         {# Socials #}
             <div class="col-lg-3 col-md-12 d-flex flex-column justify-content-center align-items-center">
-                <p class="text-center text-white socials-text">Suivez-nous sur les réseaux !</p>
+                <p class="text-center text-white socials-text fw-bold">Suivez-nous sur les réseaux !</p>
                 <div class="socials">
                     <img class="m-2" src="{{ asset('images/logo/instagram.svg') }}" alt="logo instagram">
                     <img class="m-2" src="{{ asset('images/logo/twitter.svg') }}" alt="logo twitter">
