@@ -108,10 +108,10 @@ class AdFixtures extends Fixture
             $ad4->setSize1(0);
             $ad4->setSize2(0);
             $ad4->setSize3(0);
-            $ad4->setImageFile1(new UploadedFile('public/images/ads/Peugeot206/alvaro-reyes-Ar87_RWv7Mo-unsplash.jpg','ivan-jevtic-oZaPKFFqJ7s-unsplash.jpg','jpg', UPLOAD_ERR_OK, true));
-            $ad4->setImageFile2(new UploadedFile('public/images/ads/Peugeot206/c-joyful-1OLtI79n7hA-unsplash.jpg',
-            'praswin-prakashan-dGsf8Y0n2d0-unsplash.jpg','jpg', UPLOAD_ERR_OK, true));
-            $ad4->setImageFile3(new UploadedFile('public/images/ads/Peugeot206/c-joyful-LXlQtT2xKCU-unsplash.jpg','obi-pixel8propix-S4M_m4QjY38-unsplash.jpg','jpg', UPLOAD_ERR_OK, true));
+            $ad4->setImageFile1(new UploadedFile('public/images/ads/Peugeot206/konrad-bednarek-4F1zFy3NvFI-unsplash.jpg','konrad-bednarek-4F1zFy3NvFI-unsplash.jpg','jpg', UPLOAD_ERR_OK, true));
+            $ad4->setImageFile2(new UploadedFile('public/images/ads/Peugeot206/konrad-bednarek-T8JAC7y8HqU-unsplash.jpg',
+            'konrad-bednarek-T8JAC7y8HqU-unsplash.jpg','jpg', UPLOAD_ERR_OK, true));
+            $ad4->setImageFile3(new UploadedFile('public/images/ads/Peugeot206/alvaro-reyes-Ar87_RWv7Mo-unsplash.jpg','alvaro-reyes-Ar87_RWv7Mo-unsplash.jpg','jpg', UPLOAD_ERR_OK, true));
             $ad4->setImageRename1('first-pic');
             $ad4->setImageRename2('second-pic');
             $ad4->setImageRename3('thrid-pic');
