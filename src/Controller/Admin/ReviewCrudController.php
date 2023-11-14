@@ -9,7 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
@@ -53,10 +52,10 @@ class ReviewCrudController extends AbstractCrudController
                 ]),
             TextareaField::new('comment')
                 ->setLabel('Commentaire'),
-            DateField::new('createdAt')
-                ->setLabel('Date'),
             BooleanField::new('isApproved')
                 ->setLabel('Approuvé'),
+            BooleanField::new('firstComment')
+                ->setLabel('Afficher ce commentaire en premier'),
         ];
     }
 }

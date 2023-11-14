@@ -35,10 +35,14 @@ class Review
     #[ORM\ManyToOne(inversedBy: 'Review')]
     private ?User $user = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $firstComment = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->setIsApproved(false);
+        $this->setFirstComment(false);
     }
 
     public function getId(): ?int
@@ -126,6 +130,18 @@ class Review
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function isFirstComment(): ?bool
+    {
+        return $this->firstComment;
+    }
+
+    public function setFirstComment(?bool $firstComment): static
+    {
+        $this->firstComment = $firstComment;
 
         return $this;
     }
