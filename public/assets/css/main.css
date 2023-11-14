@@ -1,3 +1,9 @@
+@import url('ad.css');
+@import url('login.css');
+@import url('nav.css');
+@import url('services.css');
+@import url('footer.css');
+
 /* Body */
 body {
     overflow-x: hidden;
@@ -28,26 +34,6 @@ header {
     filter:brightness(80%);
 }
 
-/* Section Services */
-.section-title{
-    font-family: 'Hind Siliguri', sans-serif;
-}
-
-.text-blue {
-    color:rgb(46, 18, 173);
-}
-
-.btn-hover {
-    color: #3e17e8;
-    border: 1px solid rgb(114, 87, 233);
-}
-
-.btn-hover:hover {
-    background:rgb(114, 87, 233);
-    border: 0px;
-    color: #fff;
-}
-
 /* Section Used Car */
 .text-yellow {
     color:rgb(173, 114, 18);
@@ -59,6 +45,32 @@ header {
 
 .ad-redirect-btn a {
     background:rgb(173, 114, 18);
+}
+
+/* Button blue */
+.btn-blue {
+    background: #3e17e8;
+    color:white;
+    border: 1px solid #3e17e8;
+}
+
+.btn-blue:hover {
+    background: #3d17e8bd;
+    color:white;
+    border: 1px solid #3d17e8bd;
+}
+
+/* Button yellow */
+.btn-yellow {
+    background: rgb(173, 114, 18);
+    color:white;
+    border: 1px solid rgb(173, 114, 18);
+}
+
+.btn-yellow:hover {
+    background-color: rgba(173, 114, 18, 0.741);
+    color:white;
+    border: 1px solid  rgba(173, 114, 18, 0.741);
 }
 
 /* Media queries */

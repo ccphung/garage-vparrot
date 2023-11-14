@@ -80,7 +80,7 @@ class ContactType extends AbstractType
 
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'yellow-btn mt-3'
+                    'class' => 'btn btn-yellow mt-3'
                 ],
                 'label' => 'Envoyer le formulaire'
             ])

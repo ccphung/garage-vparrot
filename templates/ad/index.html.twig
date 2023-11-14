@@ -14,9 +14,7 @@
                             <p class="cart-text ad-price m-0 fw-bold">Prix : {{annonce.price}} €</p>
                             <div class="ad-detail">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}} - {{annonce.energy}} </div> 
                             </br>
-                            <button class="ad-btn m-0">
-                                <a href="{{ path('details', {"title": annonce.title})}}" class="text-decoration-none">Voir l'annonce</a>
-                            </button>
+                            <a href="{{ path('details', {"title": annonce.title})}}" class="btn btn-yellow">Voir l'annonce</a>
                         </div>
                     </article>
                 </div>

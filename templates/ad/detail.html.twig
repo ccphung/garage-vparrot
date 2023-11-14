@@ -2,10 +2,8 @@
 
 {% block title %} Annonce {{ ad.title }} {% endblock %}
 
-{% block body %}
-    <button class="yellow-btn mt-5">    
-        <a href="{{ path('app_ad') }}" class="text-decoration-none"> < Revenir aux annonces</a>
-    </button>
+{% block body %}  
+        <a href="{{ path('app_ad') }}" class="btn btn-yellow mt-2"> < Revenir aux annonces</a>
 
     {# Confirmation form sent #}
     <div class="container">

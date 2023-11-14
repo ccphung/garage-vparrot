@@ -1,24 +1,7 @@
 /* Card Title */
 .ad-title {
-    color:rgb(173, 114, 18);
     font-family: 'Hind Siliguri', sans-serif;
     margin-bottom: 0px;
-}
-
-
-/* Button "voir l'annonce" */
-.ad-btn {
-    color:rgb(46, 18, 173);
-    border: 1px solid rgb(46, 18, 173);
-    background: white;
-}
-
-.ad-btn a{
-    color:rgb(46, 18, 173);
-}
-
-.ad-btn:hover {
-    background: rgba(46, 18, 173, 0.331);
 }
 
 /* Detail section */
