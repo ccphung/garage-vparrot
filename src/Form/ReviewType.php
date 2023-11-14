@@ -36,14 +36,15 @@ class ReviewType extends AbstractType
             ],
         ]) 
             ->add('rating', ChoiceType::class, [
-                'choices'  => [
+                'choices' => [
+                    'Votre note' => null,
                     '1/5 - Pas du tout satisfait' => 1,
                     '2/5 - Peu satisfait' => 2,
                     '3/5 - Moyennement satisfait' => 3,
                     '4/5 - Satisfait' => 4,
                     '5/5 - Très satisfait' => 5,
                 ],
-
+                'label' => ' ',
             ])
             ->add('comment', TextareaType::class, [
                 'attr' => [
@@ -58,7 +59,7 @@ class ReviewType extends AbstractType
                 'attr' => [
                     'class' => 'yellow-btn mt-3'
                 ],
-                'label' => 'Envoyer le formulaire'
+                'label' => 'Envoyer'
             ])
         ;
     }
