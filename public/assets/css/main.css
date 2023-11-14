@@ -68,7 +68,7 @@ header {
     }
 }
 
-@media (max-height: 320px){
+@media (max-width: 320px){
     .header-text {
         display:none;
     }
@@ -78,7 +78,7 @@ header {
     }
 }
 
-@media (min-height: 320px){
+@media (min-width: 320px){
     .header-container {
         position: absolute;
     }
