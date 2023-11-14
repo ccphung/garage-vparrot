@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ReviewController extends AbstractController
 {
-    #[Route('/review', name: 'app_review')]
+    #[Route('/avis', name: 'app_review')]
     public function index(OpeningHoursRepository $openingHours, Request $request, EntityManagerInterface $manager): Response
     {
         $contact = new Review();
