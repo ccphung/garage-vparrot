@@ -35,6 +35,12 @@ class Review
     #[ORM\ManyToOne(inversedBy: 'Review')]
     private ?User $user = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->setIsApproved(false);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
