@@ -20,8 +20,8 @@ class OpeningHoursCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Horaires d\'ouverture')
 
-            ->setPageTitle("index", "Page d'administration des horaires d'ouverture")
-            ->setPageTitle("edit", "Page de modification des horaires d'ouverture");
+            ->setPageTitle("index", "Gestion des horaires d'ouverture")
+            ->setPageTitle("edit", "Gestion des horaires d'ouverture");
     }
 
 

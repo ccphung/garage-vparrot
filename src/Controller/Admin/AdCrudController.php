@@ -23,8 +23,8 @@ class AdCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Annonces')
             ->setEntityLabelInSingular('Annonce')
 
-            ->setPageTitle("index", "Page d'administration des annonces")
-            ->setPageTitle("edit", "Page de modification de l'annonce");
+            ->setPageTitle("index", "Gestion des annonces")
+            ->setPageTitle("edit", "Gestion de l'annonce");
     }
 
     public function configureFields(string $pageName): iterable

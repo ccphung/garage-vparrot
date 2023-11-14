@@ -27,8 +27,8 @@ class UserCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Employés')
             ->setEntityLabelInSingular('Employé')
 
-            ->setPageTitle("index", "Page d'administration des employés")
-            ->setPageTitle("edit", "Page de modification de l'employé")
+            ->setPageTitle("index", "Gestion des employés")
+            ->setPageTitle("edit", "Gestion de l'employé")
 
             ->setPaginatorPageSize(10);
     }

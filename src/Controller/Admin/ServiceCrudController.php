@@ -23,8 +23,8 @@ class ServiceCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Services')
             ->setEntityLabelInSingular('Service')
 
-            ->setPageTitle("index", "Page d'administration des services")
-            ->setPageTitle("edit", "Page de modification d'un service");
+            ->setPageTitle("index", "Gestion des services")
+            ->setPageTitle("edit", "Gestion d'un service");
     }
 
     public function configureFields(string $pageName): iterable
