@@ -19,7 +19,10 @@ class HomeController extends AbstractController
             'services' => $serviceRepository->findBy([], ['id' => 'asc']),
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
             'annonces' => $adRepository->findBy([], ['id' => 'asc']),
-            'commentaires' => $reviewRepository->findBy(['isApproved' => true ])
+            'commentaires' => $reviewRepository->findBy(
+                ['isApproved' => true, 'firstComment' => false ]),
+            'firstComment'=> $reviewRepository->findOneBy(
+                ['isApproved' => true, 'firstComment' => true ]),
         ]);
     }
 }
