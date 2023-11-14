@@ -68,10 +68,6 @@ header {
     .header-img {
         position: relative;
     }
-
-    .socials-text {
-        display:none;
-    }
 }
 
 @media (min-height: 320px){

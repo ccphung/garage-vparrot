@@ -1,5 +1,3 @@
-
-/* Footer */
 footer {
     background: black;
     margin-top: 50px;
@@ -22,6 +20,13 @@ footer {
     height: 100px;
 }
 
+/* adress */
 .info-footer {
     margin:0px;
+}
+
+@media (max-height: 320px){
+    .socials-text {
+        display:none;
+    }
 }
