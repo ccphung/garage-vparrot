@@ -7,6 +7,11 @@
     "content-hash": "487eab43e219d907ad3194fe7348f669",
     "packages": [
         {
+            "require": {
+                "ext-intl": "*"
+            }
+        },
+        {
             "name": "doctrine/cache",
             "version": "2.2.0",
             "source": {
