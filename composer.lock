@@ -1479,7 +1479,6 @@
             "conflict": {
                 "fzaninotto/faker": "*"
             },
-
             "suggest": {
                 "doctrine/orm": "Required to use Faker\\ORM\\Doctrine",
                 "ext-curl": "Required by Faker\\Provider\\Image to download images.",
