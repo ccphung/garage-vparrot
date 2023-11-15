@@ -161,7 +161,7 @@ class Ad
 
     public function setTitle(string $title): static
     {
-        $this->title = $title;
+        $this->title = strtolower($title);
 
         return $this;
     }
