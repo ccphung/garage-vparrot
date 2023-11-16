@@ -4,16 +4,19 @@
 
 {% block body %}
     <header>
+
         <div class="header-container">
-            <div class="discount text-center m-0">
-                <ul class="p-0">
-                    {% for annSpeciale in annSpeciales %}
-                        {% if annSpeciale.isPublished %}
-                            <li class="list-unstyled"> {{ annSpeciale.text }} </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
+            {% if annSpeciales %}
+                <div class="discount text-center m-0">
+                    <ul class="p-0">
+                        {% for annSpeciale in annSpeciales %}
+                            {% if annSpeciale.isPublished %}
+                                <li class="list-unstyled"> {{ annSpeciale.text }} </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
             <h1 class="text-center header-text">Services et réparations automobile</h1>
             <h2 class="text-center header-text">Vente de voitures d'occasion</h2>
         </div>
