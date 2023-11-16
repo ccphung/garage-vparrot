@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Ad;
+use App\Entity\Announcement;
 use App\Entity\Contact;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -45,5 +46,7 @@ class DashboardController extends AbstractDashboardController
         ->setPermission('ROLE_USER');
         yield MenuItem::linkToCrud('Contact', 'fa-solid fa-person', Contact::class)
         ->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Annonce spéciale', 'fa-solid fa-person', Announcement::class)
+        ->setPermission('ROLE_ADMIN');
     }
 }
