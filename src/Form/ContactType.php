@@ -2,9 +2,9 @@
 
 namespace App\Form;
 
-use App\Entity\Ad;
 use App\Entity\Contact;
-use Symfony\Component\BrowserKit\Request;
+use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
+use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -85,6 +85,13 @@ class ContactType extends AbstractType
                 'label' => 'Envoyer le formulaire'
             ])
         ;
+
+        // Google recaptcha
+        $builder->add('captcha', Recaptcha3Type::class, [
+            'constraints' => new Recaptcha3(),
+            'action_name' => 'contact',
+            'locale' => 'fr',
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
