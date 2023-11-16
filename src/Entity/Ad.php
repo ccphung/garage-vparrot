@@ -79,13 +79,13 @@ class Ad
     #[ORM\Column]
     private ?int $size3 = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable:true)]
     private ?string $imageRename1 = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable:true)]
     private ?string $imageRename2 = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable:true)]
     private ?string $imageRename3 = null;
 
     #[ORM\Column(length: 255)]
@@ -161,7 +161,7 @@ class Ad
 
     public function setTitle(string $title): static
     {
-        $this->title = strtolower($title);
+        $this->title = preg_replace('/\s+/', '-',strtolower($title));
 
         return $this;
     }
@@ -245,6 +245,9 @@ class Ad
         $this->setGps(false);
         $this->setReversingCamera(false);
         $this->setSpeedRegulator(false);
+        $this->setImageRename1("first-pic");
+        $this->setImageRename2("second-pic");
+        $this->setImageRename3("thrid-pic");
     }
 
     public function getImageName1(): ?string
@@ -360,7 +363,7 @@ class Ad
         return $this->imageRename1;
     }
 
-    public function setImageRename1(string $imageRename1): static
+    public function setImageRename1(?string $imageRename1): static
     {
         $this->imageRename1 = $imageRename1;
 
@@ -372,7 +375,7 @@ class Ad
         return $this->imageRename2;
     }
 
-    public function setImageRename2(string $imageRename2): static
+    public function setImageRename2(?string $imageRename2): static
     {
         $this->imageRename2 = $imageRename2;
 
@@ -384,7 +387,7 @@ class Ad
         return $this->imageRename3;
     }
 
-    public function setImageRename3(string $imageRename3): static
+    public function setImageRename3(?string $imageRename3): static
     {
         $this->imageRename3 = $imageRename3;
 
