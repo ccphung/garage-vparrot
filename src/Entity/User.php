@@ -51,7 +51,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private Collection $service;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?announcement $announcement = null;
+    private ?Announcement $announcement = null;
 
 
     public function __construct()
@@ -257,12 +257,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getAnnouncement(): ?announcement
+    public function getAnnouncement(): ?Announcement
     {
         return $this->announcement;
     }
 
-    public function setAnnouncement(?announcement $announcement): static
+    public function setAnnouncement(?Announcement $announcement): static
     {
         $this->announcement = $announcement;
 
