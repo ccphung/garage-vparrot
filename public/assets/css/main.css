@@ -15,7 +15,11 @@ body {
 header {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.header-text{
+    display:none;
 }
 
 .discount{
@@ -25,7 +29,7 @@ header {
 
 .header-container {
     font-family: 'Lato', sans-serif;
-    position: relative;
+    position: absolute;
     color:rgb(255, 255, 255);
     z-index: 2;
 }
@@ -75,15 +79,15 @@ header {
 }
 
 /* Media queries */
-@media (max-height: 480px){
+@media screen and (max-width: 480px){
 .card {
     margin: 10px;
     }
 }
 
-@media (max-width: 320px){
+@media screen and (min-width: 460px){
     .header-text {
-        display:none;
+        display:block;
     }
 
     .header-img {
@@ -91,13 +95,13 @@ header {
     }
 }
 
-@media (min-width: 320px){
+@media screen and (max-width: 420px){
     .header-container {
-        position: absolute;
+        position: relative;
     }
 
     header {
-        flex-direction: row;
+        flex-direction: column;
     }
 }
 
