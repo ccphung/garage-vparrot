@@ -50,6 +50,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Service::class)]
     private Collection $service;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?announcement $announcement = null;
+
 
     public function __construct()
     {
@@ -250,6 +253,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $service->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAnnouncement(): ?announcement
+    {
+        return $this->announcement;
+    }
+
+    public function setAnnouncement(?announcement $announcement): static
+    {
+        $this->announcement = $announcement;
 
         return $this;
     }
