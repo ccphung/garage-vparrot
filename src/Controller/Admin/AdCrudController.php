@@ -84,15 +84,15 @@ class AdCrudController extends AbstractCrudController
             FormField::addFieldset(),
             TextField::new('imageFile1')
                 ->setFormType(VichFileType::class)
-                ->setLabel('Image 1')
+                ->setLabel('Image 1 (format 800x533px en jpg)')
                 ->hideOnIndex(),
             FormField::addFieldset(),
-            TextField::new('imageFile2')
+            TextField::new('imageFile2 (format 800x533px en jpg)')
                 ->setFormType(VichFileType::class)
                 ->setLabel('Image 2')
                 ->hideOnIndex(),
             FormField::addFieldset(),
-            TextField::new('imageFile3')
+            TextField::new('imageFile3 (format 800x533px en jpg)')
                 ->setFormType(VichFileType::class)
                 ->setLabel('Image 3')
                 ->hideOnIndex(),
