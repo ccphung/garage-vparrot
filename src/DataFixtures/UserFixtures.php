@@ -17,6 +17,15 @@ class UserFixtures extends Fixture
     {
 
         $faker = Faker\Factory::create('fr_FR');
+        
+        $admin = new User();
+        $admin->setFirstName('Vincent');
+        $admin->setLastName('Parrot');
+        $admin->setEmail('vparrot@garageparrot.fr');
+        $admin->setPassword(
+            $this->passwordHasher->hashPassword($admin, 'V1c3ntP4rr0T5858!'));
+        $admin->setRoles(["ROLE_ADMIN"]);
+        $manager->persist($admin);
 
         for($i = 1; $i <=10; $i++){
             $employe = new User();
@@ -28,15 +37,6 @@ class UserFixtures extends Fixture
             );
             $manager->persist($employe);
         }
-
-        $admin = new User();
-        $admin->setFirstName('Vincent');
-        $admin->setLastName('Parrot');
-        $admin->setEmail('vparrot@garageparrot.fr');
-        $admin->setPassword(
-            $this->passwordHasher->hashPassword($admin, 'V1c3ntP4rr0T5858!'));
-        $admin->setRoles(["ROLE_ADMIN"]);
-        $manager->persist($admin);
 
         $manager->flush();
     }
