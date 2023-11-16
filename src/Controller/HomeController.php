@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\AdRepository;
+use App\Repository\AnnouncementRepository;
 use App\Repository\OpeningHoursRepository;
 use App\Repository\ReviewRepository;
 use App\Repository\ServiceRepository;
@@ -13,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(ServiceRepository $serviceRepository, OpeningHoursRepository $openingHours, AdRepository $adRepository, ReviewRepository $reviewRepository): Response
+    public function index(ServiceRepository $serviceRepository, OpeningHoursRepository $openingHours, AdRepository $adRepository, ReviewRepository $reviewRepository, AnnouncementRepository $annRepository): Response
     {
         return $this->render('home/index.html.twig', [
             'services' => $serviceRepository->findBy([], ['id' => 'asc']),
@@ -23,6 +24,7 @@ class HomeController extends AbstractController
                 ['isApproved' => true, 'firstComment' => false ]),
             'firstComment'=> $reviewRepository->findOneBy(
                 ['isApproved' => true, 'firstComment' => true ]),
+            'annSpeciales' => $annRepository->findBy([], ['id' => 'asc']),
         ]);
     }
 }
