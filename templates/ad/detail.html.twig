@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %} Annonce {{ ad.title }} {% endblock %}
+{% block title %} Annonce {{ ad.title|upper|replace({'-':' '})}} {% endblock %}
 
 {% block body %}  
         <a href="{{ path('app_ad') }}" class="btn btn-yellow mt-2"> < Revenir aux annonces</a>
@@ -43,7 +43,7 @@
                 <div class="col-lg-6 col-md-8 col-sm-12">
                     <div class="card h-100">                         
                         <div class="card-body">
-                            <h3 class="card-title text-center">{{ ad.title|upper }}</h3>
+                            <h3 class="card-title text-center">{{ ad.title|upper|replace({'-':' '})}}</h3>
                             <h4 class="text-center ad-price text-blue">Prix : </span>{{ad.price}} €</h4>
                             <div class="container">
                                 <div class="row mt-2">
