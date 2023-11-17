@@ -14,6 +14,7 @@ use App\Entity\OpeningHours;
 use App\Entity\Review;
 use App\Entity\Service;
 use App\Entity\User;
+use App\Entity\Brand;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
 class DashboardController extends AbstractDashboardController
@@ -45,6 +46,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
         ->setPermission('ROLE_USER');
         yield MenuItem::linkToCrud('Contact', 'fa-solid fa-person', Contact::class)
+        ->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Marques', 'fa-solid fa-copyright', Brand::class)
         ->setPermission('ROLE_USER');
         yield MenuItem::linkToCrud('Annonce spéciale', 'fa-solid fa-triangle-exclamation', Announcement::class)
         ->setPermission('ROLE_ADMIN');
