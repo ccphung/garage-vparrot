@@ -9,7 +9,7 @@
         "ext-iconv": "*",
         "ext-intl": "*",
         "doctrine/doctrine-bundle": "^2.10",
-        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "doctrine/doctrine-fixtures-bundle": "*",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.16",
         "easycorp/easyadmin-bundle": "^4.8",
@@ -93,5 +93,8 @@
     },
     "compile": [
         "php bin/console doctrine:migrations:migrate"
-    ]
+    ],
+    "require-dev": {
+        "symfony/maker-bundle": "^1.50"
+    }
 }
