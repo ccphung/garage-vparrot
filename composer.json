@@ -29,7 +29,6 @@
         "symfony/http-client": "6.2.*",
         "symfony/intl": "6.2.*",
         "symfony/mailer": "6.2.*",
-        "symfony/maker-bundle": "^1.50",
         "symfony/mime": "6.2.*",
         "symfony/monolog-bundle": "^3.0",
         "symfony/notifier": "6.2.*",
@@ -95,5 +94,4 @@
     "compile": [
         "php bin/console doctrine:migrations:migrate"
     ]
-
 }
