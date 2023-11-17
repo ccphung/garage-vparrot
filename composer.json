@@ -91,5 +91,9 @@
             "allow-contrib": false,
             "require": "6.2.*"
         }
-    }
+    },
+    "compile": [
+        "php bin/console doctrine:migrations:migrate"
+    ]
+
 }
