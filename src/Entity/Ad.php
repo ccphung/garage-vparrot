@@ -34,9 +34,6 @@ class Ad
     #[ORM\Column(length: 255, unique:true)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $brand = null;
-
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $registrationYear = null;
 
@@ -118,6 +115,10 @@ class Ad
     #[ORM\Column(nullable: true)]
     private ?bool $speedRegulator = null;
 
+    #[ORM\ManyToOne(inversedBy: 'ad')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Brand $brand = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -162,18 +163,6 @@ class Ad
     public function setTitle(string $title): static
     {
         $this->title = preg_replace('/\s+/', '-',strtolower($title));
-
-        return $this;
-    }
-
-    public function getBrand(): ?string
-    {
-        return $this->brand;
-    }
-
-    public function setBrand(string $brand): static
-    {
-        $this->brand = $brand;
 
         return $this;
     }
@@ -510,6 +499,18 @@ class Ad
     public function setSpeedRegulator(?bool $speedRegulator): static
     {
         $this->speedRegulator = $speedRegulator;
+
+        return $this;
+    }
+
+    public function getBrand(): ?Brand
+    {
+        return $this->brand;
+    }
+
+    public function setBrand(?Brand $brand): static
+    {
+        $this->brand = $brand;
 
         return $this;
     }
