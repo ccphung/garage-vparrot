@@ -3,23 +3,42 @@
 {% block title %} Voitures d'occasion {% endblock %}
 
 {% block body %}
-    <main class="container">
-        <section class="row">
-            {% for annonce in annonces %}
-                <div class="col-xs-6 col-md-6 col-lg-4 mt-5  d-flex justify-content-center">
-                    <article class="card w-100">
-                    <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
-                        <div class="card-body">
-                            <h4 class="card-title ad-title m-0">{{ annonce.title|upper|replace({'-':' '})}}</h4>
-                            <p class="cart-text ad-price m-0 fw-bold">Prix : {{annonce.price}} €</p>
-                            <div class="mt-0">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}} - {{annonce.energy}} </div> 
-                            </br>
-                            <a href="{{ path('details', {"title": annonce.title})}}" class="btn btn-yellow">Voir l'annonce</a>
-                        </div>
-                    </article>
+<main class="ad-container mx-5">
+    <div class="container border mt-3 p-2">
+            <div class="d-flex flex-rox">            
+                <i class="fa-solid fa-filter"></i>
+                <h4>Filtres</h4>
+            </div>
+                <form id="filters">
+                <div class="row col-12">
+                    <div class="col-12">
+                        <p>Marques</p>
+                            <ul class="list-unstyled class">
+                            {% for brand in brands %}
+                                <li>
+                                <input type="checkbox" name="brand[]" id="{{ brand.id }}" value="{{ brand.id }}" checked> 
+                                <label for="{{ brand.id }}"> {{brand.name}} </label>
+                                </li>
+                            {% endfor %} 
+                            </ul>
+                    </div>
+                    <div class="col-12">
+                        <p>Prix</p>
+                        <input type="range" min="1" max="50000" value="50000" class="slider"  name="prices[]" id="myRange">
+                        <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <div class="container flex-grow-2">
+            <div id="content" class="row">
+                    {% include "ad/_content.html.twig" %}
                 </div>
-            {% endfor %}
-        </section>
-    </main>
+            </div>
+    </div>
+</main>
+{% endblock %}
 
+{% block javascripts %}
+    <script src="{{ asset('assets/js/filters.js') }}"></script>
 {% endblock %}
