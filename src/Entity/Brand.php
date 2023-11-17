@@ -21,6 +21,9 @@ class Brand
     #[ORM\OneToMany(mappedBy: 'brand', targetEntity: Ad::class)]
     private Collection $ad;
 
+    #[ORM\ManyToOne]
+    private ?user $user = null;
+
     public function __construct()
     {
         $this->ad = new ArrayCollection();
@@ -75,6 +78,18 @@ class Brand
 
     public function __toString() {
         return $this->name;
+    }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser(?user $user): static
+    {
+        $this->user = $user;
+
+        return $this;
     }
 
 }
