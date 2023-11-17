@@ -6,9 +6,11 @@ use App\Entity\Ad;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\AdRepository;
+use App\Repository\BrandRepository;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,11 +18,24 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdController extends AbstractController
 {
     #[Route('/annonces', name: 'app_ad')]
-    public function index(OpeningHoursRepository $openingHours, AdRepository $adRepository): Response
+    public function index(OpeningHoursRepository $openingHours, AdRepository $adRepository, Request $request, BrandRepository $brandRepository): Response
     {
+        $filterPrice = $request->get('prices');
+        $filterBrand = $request->get('brand');
+
+        if($request->get('ajax')){
+            return new JsonResponse([
+                'content' => $this->renderView('ad/_content.html.twig', [
+                    'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand),
+                    'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
+                ])
+            ]);
+        }
+
         return $this->render('ad/index.html.twig', [
+            'brands' => $brandRepository->findAll(),
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
-            'annonces' => $adRepository->findBy([], ['id' => 'asc']),
+            'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand),
         ]);
     }
 
@@ -45,7 +60,6 @@ class AdController extends AbstractController
             $form = $this->createForm(ContactType::class, $contact);
         }
         
-
         return $this->render('ad/detail.html.twig', [
             'ad' => $ad,
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),

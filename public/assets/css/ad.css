@@ -3,3 +3,14 @@
     font-family: 'Hind Siliguri', sans-serif;
     margin-bottom: 0px;
 }
+
+.ad-container {
+    display:grid;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width : 1024px) {
+    .ad-container {
+        grid-template-columns: 0.2fr 1fr;
+    }
+}
