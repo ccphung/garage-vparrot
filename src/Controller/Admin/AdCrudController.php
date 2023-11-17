@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Ad;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{IdField, TextField, DateField, MoneyField, IntegerField, FormField, BooleanField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{AssociationField, IdField, TextField, DateField, MoneyField, IntegerField, FormField, BooleanField};
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
@@ -35,7 +35,8 @@ class AdCrudController extends AbstractCrudController
                 ->hideOnForm(),
             TextField::new('title')
                 ->setLabel('Titre'),
-            TextField::new('brand')
+            AssociationField::new('brand')
+                ->renderAsNativeWidget()
                 ->setLabel('Marque'),
             MoneyField::new('price')->setCurrency('EUR')
                 ->setCurrency('EUR')
@@ -49,6 +50,11 @@ class AdCrudController extends AbstractCrudController
             DateField::new('createdAt')
                 ->setLabel('Créée le')
                 ->hideOnForm(),
+            AssociationField::new('user')
+                ->renderAsNativeWidget()
+                ->setLabel('Créée par'),
+
+
 
             FormField::addTab('Informations complémentaires'),
             TextField::new('gearcase')
