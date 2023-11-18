@@ -3,7 +3,9 @@
         <article class="card w-100">
             <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
                 <div class="card-body">
-                    <h4 class="card-title">{{ annonce.title|upper|replace({'-':' '})}}</h4>
+                    <div class="card-title">
+                        <h4 class="ad-title">{{ annonce.title|upper|replace({'-':' '})}}</h4>
+                    </div>
                     <p class="cart-text ad-price m-0 fw-bold">Prix : {{annonce.price}} €</p>
                     <div class="mt-0">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}} - {{annonce.energy}} </div> 
                     </br>

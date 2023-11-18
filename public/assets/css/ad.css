@@ -1,12 +1,17 @@
-/* Container */
-.ad-container {
-    display:grid;
-    grid-template-columns: 1fr;
+/* Card Title */
+.ad-title {
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-bottom: 0px;
 }
 
-/* Media queries */
-@media screen and (min-width : 1024px) {
-    .ad-container {
-        grid-template-columns: 0.2fr 1fr;
+/* Price filter slider */
+.slider {
+    width: 70%;
+}
+
+/* Brand list */
+@media screen and (max-width : 960px) {
+    .slider {
+        width: 80%;
     }
 }
