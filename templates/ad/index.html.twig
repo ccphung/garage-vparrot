@@ -19,6 +19,7 @@
                                         <p>Marques</p>
                                             <div class="container">
                                                 <ul class="list-unstyled row">
+                                                <div class="container">
                                                 {% for brand in brands %}
                                                     <li class="col-6 col-lg-12">
                                                         <input type="checkbox" name="brand[]" id="{{ brand.id }}"   value="{{ brand.id }}" checked> 
@@ -26,9 +27,11 @@
                                                     </li>
                                                 {% endfor %} 
                                                 </ul>
+                                                    <input type="checkbox" id="cc" onclick="checkAll(this)" checked/>
+                                                    <label for="cc" class="fw-bold mt-0">Tout sélectionner</label>
                                             </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-3">
                                         <p>Prix</p>
                                         <input type="range" min="1" max="50000" value="50000" class="slider"  name="prices[]" id="myRange">
                                         <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
@@ -53,5 +56,6 @@
 
 {% block javascripts %}
     <script src="{{ asset('assets/js/filters.js') }}"></script>
+    <script src="{{ asset('assets/js/checkboxes.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
 {% endblock %} 
