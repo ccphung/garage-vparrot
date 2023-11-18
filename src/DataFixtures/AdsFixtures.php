@@ -29,10 +29,10 @@ class AdsFixtures extends Fixture
             $ad1->setSize1(0);
             $ad1->setSize2(0);
             $ad1->setSize3(0);
-            $ad1->setImageFile1(new UploadedFile('public/images/ads/Mazda/praswin-prakashan-dGsf8Y0n2d0-unsplash.jpg','ivan-jevtic-oZaPKFFqJ7s-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
-            $ad1->setImageFile2(new UploadedFile('public/images/ads/Mazda/jonathan-gallegos-EVk5QOg-8j4-unsplash.jpg',
-            'praswin-prakashan-dGsf8Y0n2d0-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
-            $ad1->setImageFile3(new UploadedFile('public/images/ads/Mazda/ivan-jevtic-oZaPKFFqJ7s-unsplash.jpg','obi-pixel8propix-S4M_m4QjY38-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad1->setImageFile1(new UploadedFile('public/images/ads/Mazda/crosby-hinze-qzst3cCbn6E-unsplash.jpg','crosby-hinze-qzst3cCbn6E-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad1->setImageFile2(new UploadedFile('public/images/ads/Mazda/praswin-prakashan-dGsf8Y0n2d0-unsplash.jpg','praswin-prakashan-dGsf8Y0n2d0-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad1->setImageFile3(new UploadedFile('public/images/ads/Mazda/aron-yigin-d7R8GOLyC60-unsplash.jpg',
+            'aron-yigin-d7R8GOLyC60-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
             $ad1->setImageRename1('full-pic');
             $ad1->setImageRename2('top-view');
             $ad1->setImageRename3('rear-view');
@@ -100,7 +100,6 @@ class AdsFixtures extends Fixture
             $ad4 = new Ad();
             $ad4->setTitle('Peugeot-206');
             $ad4->setBrand($this->getReference('Peugeot'));
-            $ad4->getId('9');
             $ad4->setRegistrationYear(new DateTime('07/16/2011'));
             $ad4->setKilometers('66230');
             $ad4->setPrice('4900');
@@ -129,7 +128,6 @@ class AdsFixtures extends Fixture
             $ad5 = new Ad();
             $ad5->setTitle('Porsche');
             $ad5->setBrand($this->getReference('Porsche'));
-            $ad5->getId('21');
             $ad5->setRegistrationYear(new DateTime('09/10/2020'));
             $ad5->setKilometers('23651');
             $ad5->setPrice('39500');
@@ -190,7 +188,6 @@ class AdsFixtures extends Fixture
             $ad7 = new Ad();
             $ad7->setTitle('Tesla');
             $ad7->setBrand($this->getReference('Tesla'));
-            $ad7->getId('15');
             $ad7->setRegistrationYear(new DateTime('04/02/2022'));
             $ad7->setKilometers('17520');
             $ad7->setPrice('13000');
@@ -217,7 +214,180 @@ class AdsFixtures extends Fixture
             $ad7->setReversingCamera(true);
             $ad7->setGps(true);
             $manager->persist($ad7);
+
+            $ad8 = new Ad();
+            $ad8->setTitle('Renault-Clio');
+            $ad8->setBrand($this->getReference('Renault'));
+            $ad8->setRegistrationYear(new DateTime('04/04/2019'));
+            $ad8->setKilometers('12456');
+            $ad8->setPrice('4200');
+            $ad8->setEnergy('Essence');
+            $ad8->setGearcase('Manuelle');
+            $ad8->setColor('Noire');
+            $ad8->setPower(10);
+            $ad8->setDoor('5');
+            $ad8->setImageName1('');
+            $ad8->setImageName2('');
+            $ad8->setImageName3('');
+            $ad8->setSize1(0);
+            $ad8->setSize2(0);
+            $ad8->setSize3(0);
+            $ad8->setImageFile1(new UploadedFile('public/images/ads/Renault Clio/samy-mounichy-AZcfIq5X-W8-unsplash.jpg','samy-mounichy-AZcfIq5X-W8-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad8->setImageFile2(new UploadedFile('public/images/ads/Renault Clio/samy-mounichy-eTuO9BNtcPA-unsplash.jpg',
+            'samy-mounichy-eTuO9BNtcPA-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad8->setImageFile3(new UploadedFile('public/images/ads/Renault Clio/samy-mounichy-ZRuo9qFprXk-unsplash.jpg','samy-mounichy-ZRuo9qFprXk-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad8->setImageRename1('first-pic');
+            $ad8->setImageRename2('second-pic');
+            $ad8->setImageRename3('thrid-pic');
+            $ad8->setAirConditioner(true);
+            $ad8->setGps(true);
+            $manager->persist($ad8);
+
             
+            $ad9 = new Ad();
+            $ad9->setTitle('Mazda-CX3');
+            $ad9->setBrand($this->getReference('Mazda'));
+            $ad9->setRegistrationYear(new DateTime('02/18/2023'));
+            $ad9->setKilometers('35048');
+            $ad9->setPrice('39500');
+            $ad9->setEnergy('Diesel');
+            $ad9->setGearcase('Automatique');
+            $ad9->setColor('Grise');
+            $ad9->setPower(22);
+            $ad9->setDoor('5');
+            $ad9->setImageName1('');
+            $ad9->setImageName2('');
+            $ad9->setImageName3('');
+            $ad9->setSize1(0);
+            $ad9->setSize2(0);
+            $ad9->setSize3(0);
+            $ad9->setImageFile1(new UploadedFile('public/images/ads/Mazda CX3/austin-lowman-SpSVyLVB_5g-unsplash.jpg','austin-lowman-SpSVyLVB_5g-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad9->setImageFile2(new UploadedFile('public/images/ads/Mazda CX3/kelly-sikkema-XXherw1ujoI-unsplash.jpg',
+            'kelly-sikkema-XXherw1ujoI-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad9->setImageFile3(new UploadedFile('public/images/ads/Mazda CX3/miles-loewen-2vyEZ7kiq4E-unsplash.jpg','miles-loewen-2vyEZ7kiq4E-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad9->setImageRename1('first-pic');
+            $ad9->setImageRename2('second-pic');
+            $ad9->setImageRename3('thrid-pic');
+            $ad9->setAirConditioner(true);
+            $ad9->setSpeedRegulator(true);
+            $ad9->setReversingCamera(true);
+            $ad9->setGps(true);
+            $manager->persist($ad9);
+
+            $ad10 = new Ad();
+            $ad10->setTitle('Mercedes-Benz');
+            $ad10->setBrand($this->getReference('Mercedes'));
+            $ad10->setRegistrationYear(new DateTime('04/08/2019'));
+            $ad10->setKilometers('85630');
+            $ad10->setPrice('31800');
+            $ad10->setEnergy('Diesel');
+            $ad10->setGearcase('Manuelle');
+            $ad10->setColor('Noire');
+            $ad10->setPower(29);
+            $ad10->setDoor('5');
+            $ad10->setImageName1('');
+            $ad10->setImageName2('');
+            $ad10->setImageName3('');
+            $ad10->setSize1(0);
+            $ad10->setSize2(0);
+            $ad10->setSize3(0);
+            $ad10->setImageFile1(new UploadedFile('public/images/ads/Mercedes Benz/dekler-ph-ZmcOEbW3hDg-unsplash.jpg','dekler-ph-ZmcOEbW3hDg-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad10->setImageFile2(new UploadedFile('public/images/ads/Mercedes Benz/mikolaj-gorzynski-341Jd6-foKo-unsplash.jpg',
+            'mikolaj-gorzynski-341Jd6-foKo-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad10->setImageFile3(new UploadedFile('public/images/ads/Mercedes Benz/nigel-tadyanehondo-cuyqetla_Q-unsplash.jpg','nigel-tadyanehondo-cuyqetla_Q-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad10->setImageRename1('first-pic');
+            $ad10->setImageRename2('second-pic');
+            $ad10->setImageRename3('thrid-pic');
+            $ad10->setAirConditioner(true);
+            $ad10->setSpeedRegulator(true);
+            $ad10->setReversingCamera(true);
+            $manager->persist($ad10);
+
+            $ad11 = new Ad();
+            $ad11->setTitle('Fiat-Panda');
+            $ad11->setBrand($this->getReference('Fiat'));
+            $ad11->setRegistrationYear(new DateTime('11/04/2008'));
+            $ad11->setKilometers('86245');
+            $ad11->setPrice('6800');
+            $ad11->setEnergy('Essence');
+            $ad11->setGearcase('Automatique');
+            $ad11->setColor('Blanche');
+            $ad11->setPower(12);
+            $ad11->setDoor('5');
+            $ad11->setImageName1('');
+            $ad11->setImageName2('');
+            $ad11->setImageName3('');
+            $ad11->setSize1(0);
+            $ad11->setSize2(0);
+            $ad11->setSize3(0);
+            $ad11->setImageFile1(new UploadedFile('public/images/ads/Fiat panda/chris-brownless-Y4RAQ9oM4c0-unsplash.jpg','chris-brownless-Y4RAQ9oM4c0-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad11->setImageFile2(new UploadedFile('public/images/ads/Fiat panda/share-now-6FaTx3qMc5Q-unsplash.jpg',
+            'share-now-6FaTx3qMc5Q-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad11->setImageFile3(new UploadedFile('public/images/ads/Fiat panda/share-now-V8Axzxhts5M-unsplash.jpg','share-now-V8Axzxhts5M-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad11->setImageRename1('first-pic');
+            $ad11->setImageRename2('second-pic');
+            $ad11->setImageRename3('thrid-pic');
+            $ad11->setAirConditioner(true);
+            $ad11->setSpeedRegulator(true);
+            $manager->persist($ad11);
+        
+            $ad12 = new Ad();
+            $ad12->setTitle('Renault-Scenic');
+            $ad12->setBrand($this->getReference('Renault'));
+            $ad12->setRegistrationYear(new DateTime('01/02/2001'));
+            $ad12->setKilometers('99543');
+            $ad12->setPrice('6200');
+            $ad12->setEnergy('Essence');
+            $ad12->setGearcase('Manuelle');
+            $ad12->setColor('Rouge');
+            $ad12->setPower(8);
+            $ad12->setDoor('5');
+            $ad12->setImageName1('');
+            $ad12->setImageName2('');
+            $ad12->setImageName3('');
+            $ad12->setSize1(0);
+            $ad12->setSize2(0);
+            $ad12->setSize3(0);
+            $ad12->setImageFile1(new UploadedFile('public/images/ads/Renault Scenic/benjamin-nijs-g4XGoPHHGLY-unsplash.jpg','benjamin-nijs-g4XGoPHHGLY-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad12->setImageFile2(new UploadedFile('public/images/ads/Renault Scenic/vitali-adutskevich-cj8_O20Cz_0-unsplash.jpg',
+            'vitali-adutskevich-cj8_O20Cz_0-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad12->setImageFile3(new UploadedFile('public/images/ads/Renault Scenic/vitali-adutskevich-f-Ob1ubCiIE-unsplash.jpg','vitali-adutskevich-f-Ob1ubCiIE-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad12->setImageRename1('first-pic');
+            $ad12->setImageRename2('second-pic');
+            $ad12->setImageRename3('thrid-pic');
+            $ad12->setAirConditioner(true);
+            $manager->persist($ad12);
+
+            $ad13 = new Ad();
+            $ad13->setTitle('Renault Captur');
+            $ad13->setBrand($this->getReference('Renault'));
+            $ad13->setRegistrationYear(new DateTime('12/12/2012'));
+            $ad13->setKilometers('15264');
+            $ad13->setPrice('11870');
+            $ad13->setEnergy('Essence');
+            $ad13->setGearcase('Manuelle');
+            $ad13->setColor('Blanche');
+            $ad13->setPower(25);
+            $ad13->setDoor('5');
+            $ad13->setImageName1('');
+            $ad13->setImageName2('');
+            $ad13->setImageName3('');
+            $ad13->setSize1(0);
+            $ad13->setSize2(0);
+            $ad13->setSize3(0);
+            $ad13->setImageFile1(new UploadedFile('public/images/ads/Captur/vaclav-pechar-2aqHPRYXBRA-unsplash.jpg','vaclav-pechar-2aqHPRYXBRA-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad13->setImageFile2(new UploadedFile('public/images/ads/Captur/vaclav-pechar-E-S53sw_q3c-unsplash.jpg',
+            'vaclav-pechar-E-S53sw_q3c-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad13->setImageFile3(new UploadedFile('public/images/ads/Captur/vaclav-pechar-FQuXuNWZdEs-unsplash.jpg','vaclav-pechar-FQuXuNWZdEs-unsplash.jpg','blob', UPLOAD_ERR_OK, true));
+            $ad13->setImageRename1('first-pic');
+            $ad13->setImageRename2('second-pic');
+            $ad13->setImageRename3('thrid-pic');
+            $ad13->setAirConditioner(true);
+            $ad13->setSpeedRegulator(true);
+            $ad13->setReversingCamera(true);
+            $ad13->setGps(true);
+            $manager->persist($ad13);
+
             $manager->flush();
         }
 }
