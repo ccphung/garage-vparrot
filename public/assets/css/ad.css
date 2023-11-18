@@ -1,7 +1,6 @@
-/* Container */
-.ad-container {
-    display:grid;
-    grid-template-columns: 1fr;
+/* Card Title */
+.card-title {
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 /* Price filter bar */

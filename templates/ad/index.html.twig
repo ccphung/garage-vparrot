@@ -22,18 +22,18 @@
                                             <div class="row">
                                             {% for brand in brands %}
                                                 <li class="col-6 col-lg-12">
-                                                    <input type="checkbox" name="brand[]" id="{{ brand.id }}"   value="{{ brand.id }}" checked> 
+                                                    <input type="checkbox" name="brand[]" id="{{ brand.id }}" value="{{ brand.id }}" checked> 
                                                     <label for="{{ brand.id }}"> {{brand.name}} </label>
                                                 </li>
                                             {% endfor %} 
                                             </ul>
                                                 <input type="checkbox" id="cc" onclick="checkAll(this)" checked/>
-                                                <label for="cc" class="fw-bold mt-0">Tout sélectionner</label>
+                                                <label for="cc" class="mt-0">Tout sélectionner</label>
                                         </div>
                                     </div>
-                                    <div class="col-12 mt-3">
-                                        <p>Prix</p>
-                                        <input type="range" min="1" max="50000" value="50000" class="slider" name="prices[]" id="myRange">
+                                    <div class="col-6 mt-5">
+                                        <p class="mb-0">Prix</p>
+                                        <input type="range" min="1" max="50000" value="50000" class="slider mt-0" name="prices[]" id="myRange">
                                         <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
                                     </div>
                                 </form>
