@@ -5,12 +5,5 @@
 
 /* Price filter slider */
 .slider {
-    width: 70%;
-}
-
-/* Brand list */
-@media screen and (max-width : 960px) {
-    .slider {
-        width: 80%;
-    }
+    width: 80%;
 }
