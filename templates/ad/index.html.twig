@@ -3,40 +3,52 @@
 {% block title %} Voitures d'occasion {% endblock %}
 
 {% block body %}
-    <main class="ad-container">
-        <div class="container border mt-3 p-2">
-                <div class="d-flex flex-row">            
-                    <i class="fa-solid fa-filter"></i>
-                    <h4>Filtres</h4>
+    <main>
+        <div class="container">
+            <div class="row mt-3">
+            
+            {# Filters #}
+                <div class="col-lg-2 col-sm-12 border">
+                    <div class="d-flex flex-row mt-2">            
+                        <i class="fa-solid fa-filter"></i>
+                        <h4>Filtres</h4>
+                    </div>
+                        <form id="filters">
+                            <div class="row">
+                                    <div class="col-12">
+                                        <p>Marques</p>
+                                            <div class="container">
+                                                <ul class="list-unstyled row">
+                                                {% for brand in brands %}
+                                                    <li class="col-6 col-lg-12">
+                                                        <input type="checkbox" name="brand[]" id="{{ brand.id }}"   value="{{ brand.id }}" checked> 
+                                                        <label for="{{ brand.id }}"> {{brand.name}} </label>
+                                                    </li>
+                                                {% endfor %} 
+                                                </ul>
+                                            </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>Prix</p>
+                                        <input type="range" min="1" max="50000" value="50000" class="slider"  name="prices[]" id="myRange">
+                                        <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+                    
+                    {# Ads #}
+                    <div class="col-lg-10 col-sm-12">
+                        <div class="container">
+                            <div id="content" class="row">
+                                {% include "ad/_content.html.twig" %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <form id="filters">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-6">
-                        <p>Marques</p>
-                            <ul class="list-unstyled class">
-                            {% for brand in brands %}
-                                <li>
-                                <input type="checkbox" name="brand[]" id="{{ brand.id }}" value="{{ brand.id }}" checked> 
-                                <label for="{{ brand.id }}"> {{brand.name}} </label>
-                                </li>
-                            {% endfor %} 
-                            </ul>
-                    </div>
-                    <div class="col-lg-12 col-sm-6">
-                        <p>Prix</p>
-                        <input type="range" min="1" max="50000" value="50000" class="slider"  name="prices[]" id="myRange">
-                        <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
-                    </div>
-            </form>
-        </div>
-    </div>
-    <div class="container">
-        <div id="content" class="row">
-                {% include "ad/_content.html.twig" %}
             </div>
         </div>
-    </div>
-</main>
+    </main>
 {% endblock %}
 
 {% block javascripts %}

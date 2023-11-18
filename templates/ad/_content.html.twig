@@ -1,6 +1,6 @@
 {% for annonce in annonces %}
-    <div class="col-lg-4 col-md-6 col-xs-12 d-flex justify-content-center">
-        <article class="card w-100 m-3">
+    <div class="col-lg-4 col-md-6 col-xs-12 mt-3">
+        <article class="card w-100">
             <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
                 <div class="card-body">
                     <h4 class="card-title ad-title m-0">{{ annonce.title|upper|replace({'-':' '})}}</h4>
