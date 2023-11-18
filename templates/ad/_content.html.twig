@@ -1,14 +1,14 @@
 {% for annonce in annonces %}
     <div class="col-lg-4 col-md-6 col-xs-12 d-flex justify-content-center">
-    <article class="card w-100 m-3">
-        <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
-            <div class="card-body">
-                <h4 class="card-title ad-title m-0">{{ annonce.title|upper|replace({'-':' '})}}</h4>
-                <p class="cart-text ad-price m-0 fw-bold">Prix : {{annonce.price}} €</p>
-                <div class="mt-0">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}} - {{annonce.energy}} </div> 
-                </br>
-                <a href="{{ path('details', {"title": annonce.title})}}" class="btn btn-yellow">Voir l'annonce</a>
-            </div>
-        </div>
-    </article>
+        <article class="card w-100 m-3">
+            <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
+                <div class="card-body">
+                    <h4 class="card-title ad-title m-0">{{ annonce.title|upper|replace({'-':' '})}}</h4>
+                    <p class="cart-text ad-price m-0 fw-bold">Prix : {{annonce.price}} €</p>
+                    <div class="mt-0">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}} - {{annonce.energy}} </div> 
+                    </br>
+                    <a href="{{ path('details', {"title": annonce.title})}}" class="btn btn-yellow">Voir l'annonce</a>
+                </div>
+        </article>
+    </div>
 {% endfor %}
