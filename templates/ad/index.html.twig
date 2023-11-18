@@ -6,7 +6,7 @@
     <main>
         <div class="container">
             <div class="row mt-3">
-
+            
             {# Filters #}
                 <div class="col-lg-2 col-sm-12 border">
                     <div class="d-flex flex-row mt-2">            
@@ -17,23 +17,23 @@
                             <div class="row">
                                     <div class="col-12">
                                         <p>Marques</p>
-                                            <div class="container">
-                                                <ul class="list-unstyled row">
-                                                <div class="container">
-                                                {% for brand in brands %}
-                                                    <li class="col-6 col-lg-12">
-                                                        <input type="checkbox" name="brand[]" id="{{ brand.id }}"   value="{{ brand.id }}" checked> 
-                                                        <label for="{{ brand.id }}"> {{brand.name}} </label>
-                                                    </li>
-                                                {% endfor %} 
-                                                </ul>
-                                                    <input type="checkbox" id="cc" onclick="checkAll(this)" checked/>
-                                                    <label for="cc" class="fw-bold mt-0">Tout sélectionner</label>
-                                            </div>
+                                        <div class="container">
+                                            <ul class="list-unstyled">
+                                            <div class="row">
+                                            {% for brand in brands %}
+                                                <li class="col-6 col-lg-12">
+                                                    <input type="checkbox" name="brand[]" id="{{ brand.id }}"   value="{{ brand.id }}" checked> 
+                                                    <label for="{{ brand.id }}"> {{brand.name}} </label>
+                                                </li>
+                                            {% endfor %} 
+                                            </ul>
+                                                <input type="checkbox" id="cc" onclick="checkAll(this)" checked/>
+                                                <label for="cc" class="fw-bold mt-0">Tout sélectionner</label>
+                                        </div>
                                     </div>
                                     <div class="col-12 mt-3">
                                         <p>Prix</p>
-                                        <input type="range" min="1" max="50000" value="50000" class="slider"  name="prices[]" id="myRange">
+                                        <input type="range" min="1" max="50000" value="50000" class="slider" name="prices[]" id="myRange">
                                         <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
                                     </div>
                                 </form>
