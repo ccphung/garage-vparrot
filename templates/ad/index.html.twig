@@ -10,35 +10,36 @@
                     <h4>Filtres</h4>
                 </div>
                 <form id="filters">
-                    <div class="row col-12">
-                        <div class="col-12">
-                            <p>Marques</p>
-                                <ul class="list-unstyled class">
-                                {% for brand in brands %}
-                                    <li>
-                                    <input type="checkbox" name="brand[]" id="{{ brand.id }}" value="{{ brand.id }}" checked> 
-                                    <label for="{{ brand.id }}"> {{brand.name}} </label>
-                                    </li>
-                                {% endfor %} 
-                                </ul>
-                        </div>
-                        <div class="col-12">
-                            <p>Prix</p>
-                            <input type="range" min="1" max="50000" value="50000" class="slider"  name="prices[]" id="myRange">
-                            <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
-                        </div>
-                </form>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-6">
+                        <p>Marques</p>
+                            <ul class="list-unstyled class">
+                            {% for brand in brands %}
+                                <li>
+                                <input type="checkbox" name="brand[]" id="{{ brand.id }}" value="{{ brand.id }}" checked> 
+                                <label for="{{ brand.id }}"> {{brand.name}} </label>
+                                </li>
+                            {% endfor %} 
+                            </ul>
+                    </div>
+                    <div class="col-lg-12 col-sm-6">
+                        <p>Prix</p>
+                        <input type="range" min="1" max="50000" value="50000" class="slider"  name="prices[]" id="myRange">
+                        <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <div class="container flex-grow-2">
+        <div id="content" class="row">
+                {% include "ad/_content.html.twig" %}
             </div>
         </div>
-        <div class="container">
-            <div id="content" class="row">
-                    {% include "ad/_content.html.twig" %}
-                </div>
-            </div>
-        </div>
-    </main>
+    </div>
+</main>
 {% endblock %}
 
 {% block javascripts %}
     <script src="{{ asset('assets/js/filters.js') }}"></script>
-{% endblock %}
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
+{% endblock %} 
