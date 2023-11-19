@@ -3,7 +3,14 @@
     font-family: 'Hind Siliguri', sans-serif;
 }
 
+<<<<<<< HEAD
 /* Price filter slider */
 .slider {
     width: 80%;
 }
+=======
+/* Price filter bar */
+.slider {
+    width: 80%;
+}
+>>>>>>> dev
