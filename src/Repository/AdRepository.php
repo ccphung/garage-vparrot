@@ -47,7 +47,7 @@ class AdRepository extends ServiceEntityRepository
     if($filterYear != null){
         $date = new \DateTime("$filterYear[0]-12-31");
         $query
-        ->andWhere('a.registrationYear < :year')
+        ->andWhere('a.registrationYear > :year')
         ->setParameter('year', ($date));
     }
 
