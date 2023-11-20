@@ -23,11 +23,12 @@ class AdController extends AbstractController
         $filterPrice = $request->get('prices');
         $filterBrand = $request->get('brand');
         $filterYear = $request->get('years');
+        $filterKm = $request->get('km');
 
         if($request->get('ajax')){
             return new JsonResponse([
                 'content' => $this->renderView('ad/_content.html.twig', [
-                    'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand, $filterYear),
+                    'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand, $filterYear, $filterKm),
                     'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
                 ])
             ]);
@@ -36,7 +37,7 @@ class AdController extends AbstractController
         return $this->render('ad/index.html.twig', [
             'brands' => $brandRepository->findAll(),
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
-            'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand, $filterYear),
+            'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand, $filterYear, $filterKm),
         ]);
     }
 

@@ -25,7 +25,7 @@ class AdRepository extends ServiceEntityRepository
 //    /**
 //     * @return Ad[] Returns an array of Ad objects
 //     */
-   public function findByFilter($filterPrice, $filterBrand, $filterYear)
+   public function findByFilter($filterPrice, $filterBrand, $filterYear, $filterKm)
    {
 
     $query = $this->createQueryBuilder('a');
@@ -47,8 +47,14 @@ class AdRepository extends ServiceEntityRepository
     if($filterYear != null){
         $date = new \DateTime("$filterYear[0]-12-31");
         $query
-        ->andWhere('a.registrationYear < :year')
+        ->andWhere('a.registrationYear > :year')
         ->setParameter('year', ($date));
+    }
+
+    if($filterKm != null){
+        $query
+        ->andWhere('a.kilometers < :km')
+        ->setParameter('km', ($filterKm));
     }
 
     return $query->getQuery()->getResult();
