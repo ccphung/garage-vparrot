@@ -42,9 +42,12 @@ class UserCrudController extends AbstractCrudController
         $fields = [
             IdField::new('id')
                 ->hideOnForm(),
-            TextField::new('firstname'),
-            TextField::new('lastname'),
-            EmailField::new('email'),
+            TextField::new('firstname')
+                ->setLabel('Prénom'),
+            TextField::new('lastname')
+                ->setLabel('Nom'),
+            EmailField::new('email')
+                ->setLabel('Email'),
         ];
 
         
