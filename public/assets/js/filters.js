@@ -4,6 +4,8 @@ window.onload = () => {
     const priceOutput = document.getElementById("price");
     const yearOutput = document.getElementById("year");
     const yearSlider = document.getElementById("myYearRange");
+    const kmSlider = document.getElementById("myKmRange");
+    const kmOutput = document.getElementById("km");
 
     document.querySelectorAll("#filters input").forEach(input => {
         input.addEventListener('change', () => {
@@ -11,6 +13,7 @@ window.onload = () => {
             const Form = new FormData(FiltersForm);
             priceOutput.innerHTML = priceSlider.value;
             yearOutput.innerHTML = yearSlider.value;
+            kmOutput.innerHTML = kmSlider.value;
             // Create queryString
             const Params = new URLSearchParams();
 
