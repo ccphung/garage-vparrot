@@ -25,10 +25,13 @@ class AdRepository extends ServiceEntityRepository
 //    /**
 //     * @return Ad[] Returns an array of Ad objects
 //     */
-   public function findByFilter($filterPrice, $filterBrand)
+   public function findByFilter($filterPrice, $filterBrand, $filterYear)
    {
+
     $query = $this->createQueryBuilder('a');
-    
+
+
+
     if($filterPrice !== null){
         $query
             ->andWhere('a.price < :max')
@@ -39,6 +42,13 @@ class AdRepository extends ServiceEntityRepository
         $query
         ->andWhere('a.brand IN (:brands)')
         ->setParameter(':brands', array_values($filterBrand));
+    }
+
+    if($filterYear != null){
+        $date = new \DateTime("$filterYear[0]-12-31");
+        $query
+        ->andWhere('a.registrationYear < :year')
+        ->setParameter('year', ($date));
     }
 
     return $query->getQuery()->getResult();

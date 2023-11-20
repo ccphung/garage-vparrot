@@ -1,14 +1,16 @@
 window.onload = () => {
     const FiltersForm = document.querySelector("#filters");
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value;
+    const priceSlider = document.getElementById("myPriceRange");
+    const priceOutput = document.getElementById("price");
+    const yearOutput = document.getElementById("year");
+    const yearSlider = document.getElementById("myYearRange");
 
     document.querySelectorAll("#filters input").forEach(input => {
         input.addEventListener('change', () => {
             // Retrieve data on click            
             const Form = new FormData(FiltersForm);
-            output.innerHTML = slider.value;
+            priceOutput.innerHTML = priceSlider.value;
+            yearOutput.innerHTML = yearSlider.value;
             // Create queryString
             const Params = new URLSearchParams();
 
