@@ -15,8 +15,9 @@
                     </div>
                         <form id="filters">
                             <div class="row">
+                                    {# Brand filter #}
                                     <div class="col-12">
-                                        <p>Marques</p>
+                                        <p class="fw-bold">Marques</p>
                                         <div class="container">
                                             <ul class="list-unstyled">
                                             <div class="row">
@@ -31,10 +32,17 @@
                                                 <label for="cc" class="mt-0">Tout sélectionner</label>
                                         </div>
                                     </div>
-                                    <div class="col-6 mt-5">
-                                        <p class="mb-0">Prix</p>
-                                        <input type="range" min="1" max="50000" value="50000" class="slider mt-0" name="prices[]" id="myRange">
-                                        <p>Jusqu'à <label for="prices[]" id="demo"></label> EUR</p>
+                                    {# Price Filter #}
+                                    <div class="col-8 col-lg-12 mt-2">
+                                        <p class="mb-0 fw-bold">Prix</p>
+                                        <input type="range" min="1" max="50000" value="50000" class="mt-0" name="prices[]" id="myPriceRange">
+                                        <p>Jusqu'à <label for="prices[]" id="price"></label> EUR</p>
+                                    </div>
+                                    {# Year Filter #}
+                                    <div class="col-8 col-lg-12 mt-2">
+                                        <p class="mb-0 fw-bold">Année</p>
+                                        <input type="range" min="2000" max="2023" value="2023" class="mt-0" name="years[]" id="myYearRange">
+                                        <p>Jusqu'en <label for="years[]" id="year"></label></p>
                                     </div>
                                 </form>
                             </div>
