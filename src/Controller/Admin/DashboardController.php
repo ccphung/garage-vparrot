@@ -39,6 +39,8 @@ class DashboardController extends AbstractDashboardController
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Annonces', 'fa-solid fa-car', Ad::class)
         ->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Marques', 'fa-solid fa-copyright', Brand::class)
+        ->setPermission('ROLE_USER');
         yield MenuItem::linkToCrud('Services', 'fa-solid fa-screwdriver-wrench', Service::class)
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Horaires d\'ouverture', 'fa-solid fa-calendar-days', OpeningHours::class)
@@ -46,8 +48,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
         ->setPermission('ROLE_USER');
         yield MenuItem::linkToCrud('Contact', 'fa-solid fa-person', Contact::class)
-        ->setPermission('ROLE_USER');
-        yield MenuItem::linkToCrud('Marques', 'fa-solid fa-copyright', Brand::class)
         ->setPermission('ROLE_USER');
         yield MenuItem::linkToCrud('Annonce spéciale', 'fa-solid fa-triangle-exclamation', Announcement::class)
         ->setPermission('ROLE_ADMIN');
