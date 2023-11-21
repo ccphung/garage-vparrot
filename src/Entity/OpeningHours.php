@@ -89,7 +89,7 @@ class OpeningHours
     private ?string $sun = null;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?user $user = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -396,12 +396,12 @@ class OpeningHours
         return $this;
     }
 
-    public function getUser(): ?user
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?user $user): static
+    public function setUser(?User $user): static
     {
         $this->user = $user;
 
