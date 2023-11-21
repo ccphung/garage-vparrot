@@ -41,6 +41,9 @@ class Contact
     #[ORM\Column(nullable: true)]
     private ?bool $isProcessed = null;
 
+    #[ORM\ManyToOne]
+    private ?user $user = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -157,6 +160,18 @@ class Contact
     public function setIsProcessed(?bool $isProcessed): static
     {
         $this->isProcessed = $isProcessed;
+
+        return $this;
+    }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser(?user $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

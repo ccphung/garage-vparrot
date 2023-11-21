@@ -88,6 +88,9 @@ class OpeningHours
     #[ORM\Column(length: 10)]
     private ?string $sun = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?user $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -389,6 +392,18 @@ class OpeningHours
     public function setSun(string $sun): static
     {
         $this->sun = $sun;
+
+        return $this;
+    }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser(?user $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }
