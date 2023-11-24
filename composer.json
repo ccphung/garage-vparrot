@@ -21,7 +21,6 @@
         "symfony/asset": "6.2.*",
         "symfony/console": "6.2.*",
         "symfony/doctrine-messenger": "6.2.*",
-        "symfony/dotenv": "6.2.*",
         "symfony/expression-language": "6.2.*",
         "symfony/flex": "^2",
         "symfony/form": "6.2.*",
@@ -94,5 +93,8 @@
     },
     "compile": [
         "php bin/console doctrine:migrations:migrate"
-    ]
+    ],
+    "require-dev": {
+        "symfony/dotenv": "6.2.*"
+    }
 }
