@@ -19,7 +19,6 @@ window.onload = () => {
 
             Form.forEach((value, key) => {
                 Params.append(key, value);
-                console.log(Params)
             });
 
             // Retrieve current URL
@@ -30,9 +29,11 @@ window.onload = () => {
                 headers: {
                     "X-Requested-With": "XMLHttpRequest"
                 }
-            }).then(response => response.json())
+            }).then(response => console.log(response))
+
             .then(data => {
                 const content = document.getElementById("content");
+                console.log(data);
                 content.innerHTML = data.content;
                 history.pushState({}, null, Url.pathname + "?" + Params.toString());
             }).catch(e => console.log(e));

@@ -5,30 +5,43 @@
 {% block body %}
     <main>
         <div class="container">
-            {% for message in app.flashes('success')%}
+            {% for message in app.flashes('success') %}
                 <div class="alert alert-success mt-4">
                     {{ message }}
-             </div>
+                </div>
             {% endfor %}
         </div>
+
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-12">
                     <h2 class='mt-5 text-center'>Laisser un avis</h2>
                     {{ form_start(form) }}
-                        {{ form_errors(form) }}
-                            <div class="row">
-                                <div class="col-6">
-                                    {{ form_row(form.firstName) }}
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form_label(form.firstName) }}
+                            {{ form_widget(form.firstName) }}
+                            {% if form_errors(form.firstName) %}
+                                <div class="text-danger">
+                                    {{ form_errors(form.firstName) }}
                                 </div>
-                                <div class="col-6">
-                                    {{ form_row(form.lastName) }}
+                            {% endif %}
+                        </div>
+                        <div class="col-6">
+                            {{ form_label(form.lastName) }}
+                            {{ form_widget(form.lastName) }}
+                            {% if form_errors(form.lastName) %}
+                                <div class="text-danger">
+                                    {{ form_errors(form.lastName) }}
                                 </div>
+                            {% endif %}
+                        </div>
                         {% if form.rating %}
                             {{ form_row(form.rating, { 'attr': {'class': 'form-select'} }) }}
                             {{ form_row(form.comment) }}
                             {{ form_row(form.submit, { 'attr': {'class': 'btn btn-yellow mt-2'} }) }}
                         {% endif %}
+                    </div>
                     {{ form_end(form)}}
                 </div>
             </div>
