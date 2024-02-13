@@ -46,12 +46,12 @@ class AdCrudController extends AbstractCrudController
                     new PositiveOrZero(['message' => 'Veuillez entrer un nombre supérieur à 0'])
                 ]),
             IntegerField::new('kilometers')
-                ->setLabel('Kilométrage'),
-            DateField::new('registrationYear')->renderAsNativeWidget()
-                ->setLabel('Année de mise en circulation')
+                ->setLabel('Kilométrage')
                 ->setFormTypeOption('constraints', [
                     new PositiveOrZero(['message' => 'Veuillez entrer un nombre supérieur à 0'])
                 ]),
+            DateField::new('registrationYear')->renderAsNativeWidget()
+                ->setLabel('Année de mise en circulation'),
             DateField::new('createdAt')
                 ->setLabel('Créée le')
                 ->hideOnForm(),
