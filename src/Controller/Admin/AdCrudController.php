@@ -43,19 +43,21 @@ class AdCrudController extends AbstractCrudController
                 ->setLabel('Prix')
                 ->setCustomOption('storedAsCents', false)
                 ->setFormTypeOption('constraints', [
-                    new PositiveOrZero(['message' => 'Le prix doit être un nombre positif ou nul'])
+                    new PositiveOrZero(['message' => 'Veuillez entrer un nombre supérieur à 0'])
                 ]),
             IntegerField::new('kilometers')
                 ->setLabel('Kilométrage'),
             DateField::new('registrationYear')->renderAsNativeWidget()
-                ->setLabel('Année de mise en circulation'),
+                ->setLabel('Année de mise en circulation')
+                ->setFormTypeOption('constraints', [
+                    new PositiveOrZero(['message' => 'Veuillez entrer un nombre supérieur à 0'])
+                ]),
             DateField::new('createdAt')
                 ->setLabel('Créée le')
                 ->hideOnForm(),
             AssociationField::new('user')
                 ->renderAsNativeWidget()
                 ->setLabel('Créée par'),
-
 
 
             FormField::addTab('Informations complémentaires'),
