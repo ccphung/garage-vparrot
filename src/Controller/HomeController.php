@@ -17,8 +17,8 @@ class HomeController extends AbstractController
     public function index(ServiceRepository $serviceRepository, OpeningHoursRepository $openingHours, AdRepository $adRepository, ReviewRepository $reviewRepository, AnnouncementRepository $annRepository): Response
     {
         return $this->render('home/index.html.twig', [
-            'services' => $serviceRepository->findBy([], ['id' => 'asc']),
-            'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
+            'services' => $serviceRepository->findAll(),
+            'horaires' => $openingHours->findOneBy([]),
             'annonces' => $adRepository->findBy([], ['id' => 'asc']),
             'commentaires' => $reviewRepository->findBy(
                 ['isApproved' => true, 'firstComment' => false ]),

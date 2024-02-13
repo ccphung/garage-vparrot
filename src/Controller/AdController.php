@@ -36,7 +36,7 @@ class AdController extends AbstractController
 
         return $this->render('ad/index.html.twig', [
             'brands' => $brandRepository->findAll(),
-            'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
+            'horaires' => $openingHours->findOneBy([]),
             'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand, $filterYear, $filterKm),
         ]);
     }

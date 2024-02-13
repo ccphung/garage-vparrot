@@ -7,9 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{AssociationField, IdField, TextField, DateField, MoneyField, IntegerField, FormField, BooleanField};
 use Vich\UploaderBundle\Form\Type\VichFileType;
-use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
+use Symfony\Component\Validator\Constraints\PositiveOrZero;
 
-#[AttributeIsGranted('ROLE_USER')]
 class AdCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -42,7 +41,10 @@ class AdCrudController extends AbstractCrudController
                 ->setCurrency('EUR')
                 ->setNumDecimals(0)
                 ->setLabel('Prix')
-                ->setCustomOption('storedAsCents', false),
+                ->setCustomOption('storedAsCents', false)
+                ->setFormTypeOption('constraints', [
+                    new PositiveOrZero(['message' => 'Le prix doit être un nombre positif ou nul'])
+                ]),
             IntegerField::new('kilometers')
                 ->setLabel('Kilométrage'),
             DateField::new('registrationYear')->renderAsNativeWidget()

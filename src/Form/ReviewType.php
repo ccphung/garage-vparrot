@@ -10,7 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ReviewType extends AbstractType
 {
@@ -25,6 +26,13 @@ class ReviewType extends AbstractType
             'label_attr' => [
                 'class' => 'form-label mt-2'
             ],
+            'constraints' => [
+                new NotBlank(['message' => 'Veuillez remplir.']),
+                new Length([
+                    'max' => 50,
+                    'maxMessage' => 'Le texte ne peut pas dépasser {{ limit }} caractères.',
+                ]),
+            ],
         ])
         ->add('lastName', TextType::class, [
             'attr' => [
@@ -33,6 +41,13 @@ class ReviewType extends AbstractType
             'label' => 'Nom',
             'label_attr' => [
                 'class' => 'form-label mt-2'
+            ],
+            'constraints' => [
+                new NotBlank(['message' => 'Veuillez remplir.']),
+                new Length([
+                    'max' => 50,
+                    'maxMessage' => 'Le texte ne peut pas dépasser {{ limit }} caractères.',
+                ]),
             ],
         ]) 
             ->add('rating', ChoiceType::class, [
@@ -44,6 +59,9 @@ class ReviewType extends AbstractType
                     '4/5 - Satisfait' => 4,
                     '5/5 - Très satisfait' => 5,
                 ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez sélectionner une note']),
+                ],
                 'label' => ' ',
             ])
             ->add('comment', TextareaType::class, [
@@ -53,6 +71,9 @@ class ReviewType extends AbstractType
                 'label' => 'Commentaire',
                 'label_attr' => [
                     'class' => 'form-label mt-2'
+                ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez sélectionner une note']),
                 ],
             ])
             ->add('submit', SubmitType::class, [
