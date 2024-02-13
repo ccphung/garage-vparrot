@@ -29,11 +29,10 @@ window.onload = () => {
                 headers: {
                     "X-Requested-With": "XMLHttpRequest"
                 }
-            }).then(response => console.log(response))
+            }).then(response => response.json())
 
             .then(data => {
                 const content = document.getElementById("content");
-                console.log(data);
                 content.innerHTML = data.content;
                 history.pushState({}, null, Url.pathname + "?" + Params.toString());
             }).catch(e => console.log(e));
