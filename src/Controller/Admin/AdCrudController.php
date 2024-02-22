@@ -29,7 +29,7 @@ class AdCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         $fields = [
-            FormField::addTab('Détails l\'annonce'),
+            FormField::addTab('Détails de l\'annonce'),
             IdField::new('id')
                 ->hideOnForm(),
             TextField::new('title')
