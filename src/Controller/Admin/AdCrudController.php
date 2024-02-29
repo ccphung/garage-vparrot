@@ -6,11 +6,17 @@ use App\Entity\Ad;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{AssociationField, IdField, TextField, DateField, MoneyField, IntegerField, FormField, BooleanField};
+use Symfony\Bundle\SecurityBundle\Security;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Validator\Constraints\PositiveOrZero;
 
 class AdCrudController extends AbstractCrudController
 {
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
     public static function getEntityFqcn(): string
     {
         return Ad::class;
@@ -28,6 +34,8 @@ class AdCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        $user = $this->security->getUser(); 
+
         $fields = [
             FormField::addTab('Détails de l\'annonce'),
             IdField::new('id')
@@ -57,7 +65,9 @@ class AdCrudController extends AbstractCrudController
                 ->hideOnForm(),
             AssociationField::new('user')
                 ->renderAsNativeWidget()
-                ->setLabel('Créée par'),
+                ->setLabel('Créée par')
+                ->setFormTypeOption('disabled', true)
+                ->setFormTypeOption('data', $user),
 
 
             FormField::addTab('Informations complémentaires'),
