@@ -28,6 +28,9 @@ class ContactType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label mt-2'
                 ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez entrer votre prénom.']),
+                ],
             ])
             ->add('lastName', TextType::class, [
                 'attr' => [
@@ -36,6 +39,9 @@ class ContactType extends AbstractType
                 'label' => 'Nom',
                 'label_attr' => [
                     'class' => 'form-label mt-2'
+                ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez entrer votre nom.']),
                 ],
             ])
 
@@ -47,6 +53,9 @@ class ContactType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label mt-2'
                 ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez entrer votre email.']),
+                ],
             ])
 
             ->add('phoneNumber', TelType::class, [
@@ -56,6 +65,9 @@ class ContactType extends AbstractType
                 'label' => 'Téléphone',
                 'label_attr' => [
                     'class' => 'form-label mt-2'
+                ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez entrer votre numéro de téléphone.']),
                 ],
             ])
 
@@ -67,6 +79,9 @@ class ContactType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label mt-2'
                 ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez entrer un sujet.']),
+                ],
             ])
 
             ->add('message', TextareaType::class, [
@@ -76,6 +91,9 @@ class ContactType extends AbstractType
                 'label' => 'Message',
                 'label_attr' => [
                     'class' => 'form-label mt-2'
+                ],
+                'constraints' => [
+                    new NotBlank(['message' => 'Veuillez écrire votre message.']),
                 ],
             ])
 
