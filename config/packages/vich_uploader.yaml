@@ -36,7 +36,7 @@ vich_uploader:
                 service: vich_uploader.namer_directory_property
                 options: { property: 'title', transliterate: true }
            inject_on_load: true
-           delete_on_update: true
+           delete_on_update: false
            delete_on_remove: false
 
        ads3:
@@ -49,5 +49,5 @@ vich_uploader:
                 service: vich_uploader.namer_directory_property
                 options: { property: 'title', transliterate: true }
            inject_on_load: true
-           delete_on_update: true
+           delete_on_update: false
            delete_on_remove: false
