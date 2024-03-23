@@ -2,52 +2,60 @@ vich_uploader:
     db_driver: orm
     metadata:
         type: attribute
-    
 
     mappings:
-       services:
-           uri_prefix: /images/services
-           upload_destination: '%kernel.project_dir%/public/images/services'
-           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
-
-           inject_on_load: true
-           delete_on_update: true
-           delete_on_remove: false
+        services:
+            uri_prefix: /images/services
+            upload_destination: '%kernel.project_dir%/public/images/services'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: false
         
-       ads1:
-           uri_prefix: /images/ads
-           upload_destination: '%kernel.project_dir%/public/uploads/ads'
-           namer:
+        ads1:
+            uri_prefix: /images/ads
+            upload_destination: '%kernel.project_dir%/public/uploads/ads'
+            namer:
                 service: Vich\UploaderBundle\Naming\PropertyNamer
-                options: { property: 'imageRename1'}
-           directory_namer:
+                options: 
+                    property: 'imageRename1'
+            directory_namer:
                 service: vich_uploader.namer_directory_property
-                options: { property: 'title', transliterate: true } method
-           inject_on_load: true
-           delete_on_update: true
-           delete_on_remove: false
-       ads2:
-           uri_prefix: /images/ads
-           upload_destination: '%kernel.project_dir%/public/uploads/ads'
-           namer:
+                options: 
+                    property: 'title'
+                    transliterate: true
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: false
+        
+        ads2:
+            uri_prefix: /images/ads
+            upload_destination: '%kernel.project_dir%/public/uploads/ads'
+            namer:
                 service: Vich\UploaderBundle\Naming\PropertyNamer
-                options: { property: 'imageRename2'}
-           directory_namer:
+                options: 
+                    property: 'imageRename2'
+            directory_namer:
                 service: vich_uploader.namer_directory_property
-                options: { property: 'title', transliterate: true }
-           inject_on_load: true
-           delete_on_update: false
-           delete_on_remove: false
+                options: 
+                    property: 'title'
+                    transliterate: true
+            inject_on_load: true
+            delete_on_update: false
+            delete_on_remove: false
 
-       ads3:
-           uri_prefix: /images/ads
-           upload_destination: '%kernel.project_dir%/public/uploads/ads'
-           namer:
+        ads3:
+            uri_prefix: /images/ads
+            upload_destination: '%kernel.project_dir%/public/uploads/ads'
+            namer:
                 service: Vich\UploaderBundle\Naming\PropertyNamer
-                options: { property: 'imageRename3'}
-           directory_namer:
+                options: 
+                    property: 'imageRename3'
+            directory_namer:
                 service: vich_uploader.namer_directory_property
-                options: { property: 'title', transliterate: true }
-           inject_on_load: true
-           delete_on_update: false
-           delete_on_remove: false
+                options: 
+                    property: 'title'
+                    transliterate: true
+            inject_on_load: true
+            delete_on_update: false
+            delete_on_remove: false
