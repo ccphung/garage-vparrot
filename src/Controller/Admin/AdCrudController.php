@@ -45,7 +45,7 @@ class AdCrudController extends AbstractCrudController
             AssociationField::new('brand')
                 ->renderAsNativeWidget()
                 ->setLabel('Marque'),
-            MoneyField::new('price')->setCurrency('EUR')
+            MoneyField::new('price')
                 ->setCurrency('EUR')
                 ->setNumDecimals(0)
                 ->setLabel('Prix')
@@ -109,7 +109,7 @@ class AdCrudController extends AbstractCrudController
             FormField::addFieldset(),
             TextField::new('imageFile2')
                 ->setFormType(VichFileType::class)
-                ->setLabel('imageFile2-format 800x533px et .jpg')
+                ->setLabel('Image 2-format 800x533px et .jpg')
                 ->hideOnIndex(),
             FormField::addFieldset(),
             TextField::new('imageFile3')
