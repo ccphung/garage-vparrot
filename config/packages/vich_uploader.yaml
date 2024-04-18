@@ -9,7 +9,7 @@ vich_uploader:
             upload_destination: '/public/images/services'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
             inject_on_load: true
-            delete_on_update: true
+            delete_on_update: false
             delete_on_remove: false
         
         ads1:
