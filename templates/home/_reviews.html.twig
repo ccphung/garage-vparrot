@@ -4,7 +4,7 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade">
             <div class="carousel-inner">
                 <div class="carousel-item active px-5">
-                    <div class="card-body px-5">
+                    <div class="card-body px-5 text-center">
                         {% if firstComment.rating == 1 %}
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 {% for commentaire in commentaires %}
-                <div class="carousel-item px-5">
+                <div class="carousel-item px-5 text-center">
                     <div class="card-body px-5">
                         {% if commentaire.rating == 1 %}
                             <i class="fa-solid fa-star"></i>
