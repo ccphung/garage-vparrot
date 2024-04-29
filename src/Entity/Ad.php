@@ -236,7 +236,7 @@ class Ad
         $this->setSpeedRegulator(false);
         $this->setImageRename1("first-pic");
         $this->setImageRename2("second-pic");
-        $this->setImageRename3("thrid-pic");
+        $this->setImageRename3("third-pic");
     }
 
     public function getImageName1(): ?string
