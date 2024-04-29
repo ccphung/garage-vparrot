@@ -77,7 +77,7 @@ class Brand
     }
 
     public function __toString() {
-        return $this->name;
+        return $this->name ?? '';
     }
 
     public function getUser(): ?User
