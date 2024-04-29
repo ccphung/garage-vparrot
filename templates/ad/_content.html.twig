@@ -1,7 +1,7 @@
 {% for annonce in annonces %}
     <div class="col-lg-4 col-md-6 col-xs-12 mt-3 d-flex justify-content-center">
         <article class="card w-100">
-            <img class="card-img-top" src="{{ asset('uploads/ads/'~annonce.getTitle~'/'~annonce.imageRename1~'.jpg') }}" alt="card-img">
+        <img class="card-img-top" src="{{ 'https://images-parrot.s3.eu-north-1.amazonaws.com/' ~ annonce.getTitle ~ '/first-pic.jpg' }}" alt="card-img">
                 <div class="card-body">
                     <div class="card-title">
                         <h4>{{ annonce.title|upper|replace({'-':' '})}}</h4>

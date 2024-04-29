@@ -1,20 +1,28 @@
 vich_uploader:
     db_driver: orm
-    metadata:
-        type: attribute
+    storage: flysystem
 
     mappings:
         services:
-            uri_prefix: /images/services
-            upload_destination: '%kernel.project_dir%/public/images/services'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            uri_prefix: '%env(APP_UPLOAD_SERVICE_URI_PREFIX)%'
+            upload_destination: default
+            namer: 
+                service: 'Vich\UploaderBundle\Naming\PropertyNamer'
+                options: 
+                    property: 'title'
+            directory_namer:
+                service: vich_uploader.namer_directory_property
+                options: 
+                    property: 'title'
+                    transliterate: true
             inject_on_load: true
-            delete_on_update: false
+            delete_on_update: true
             delete_on_remove: false
+        
         
         ads1:
             uri_prefix: /images/ads
-            upload_destination: '%kernel.project_dir%/public/uploads/ads'
+            upload_destination: default
             namer:
                 service: Vich\UploaderBundle\Naming\PropertyNamer
                 options: 
@@ -30,7 +38,7 @@ vich_uploader:
         
         ads2:
             uri_prefix: /images/ads
-            upload_destination: '%kernel.project_dir%/public/uploads/ads'
+            upload_destination: default
             namer:
                 service: Vich\UploaderBundle\Naming\PropertyNamer
                 options: 
@@ -41,12 +49,12 @@ vich_uploader:
                     property: 'title'
                     transliterate: true
             inject_on_load: true
-            delete_on_update: false
+            delete_on_update: true
             delete_on_remove: false
 
         ads3:
             uri_prefix: /images/ads
-            upload_destination: '%kernel.project_dir%/public/uploads/ads'
+            upload_destination: default
             namer:
                 service: Vich\UploaderBundle\Naming\PropertyNamer
                 options: 
@@ -57,5 +65,5 @@ vich_uploader:
                     property: 'title'
                     transliterate: true
             inject_on_load: true
-            delete_on_update: false
+            delete_on_update: true
             delete_on_remove: false

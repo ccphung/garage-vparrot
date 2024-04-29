@@ -1,0 +1,10 @@
+# config/packages/flysystem.yaml
+
+flysystem:
+    storages:
+        default:
+            adapter: 'aws'
+            options:
+                client: 'Aws\S3\S3Client'
+                bucket: '%env(AWS_BUCKET_NAME)%'
+                streamReads: true

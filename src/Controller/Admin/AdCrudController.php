@@ -66,7 +66,6 @@ class AdCrudController extends AbstractCrudController
             AssociationField::new('user')
                 ->renderAsNativeWidget()
                 ->setLabel('Créée par')
-                ->setFormTypeOption('disabled', true)
                 ->setFormTypeOption('data', $user),
 
 
