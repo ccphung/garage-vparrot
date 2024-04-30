@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Ad;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{AssociationField, IdField, TextField, DateField, MoneyField, IntegerField, FormField, BooleanField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{AssociationField, IdField, TextField, DateField, MoneyField, IntegerField, FormField, BooleanField, ChoiceField};
 use Symfony\Bundle\SecurityBundle\Security;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Validator\Constraints\PositiveOrZero;
@@ -70,9 +70,13 @@ class AdCrudController extends AbstractCrudController
 
 
             FormField::addTab('Informations complémentaires'),
-            TextField::new('gearcase')
+            ChoiceField::new('gearcase')
                 ->setLabel('Boîte de vitesse')
-                ->hideOnIndex(),
+                ->hideOnIndex()
+                ->setChoices([
+                    'Manuelle' => 'Manuelle',
+                    'Automatique' => 'Automatique',
+                ]),
             IntegerField::new('door')
                 ->setLabel('Nombre de portières')
                 ->hideOnIndex(),
