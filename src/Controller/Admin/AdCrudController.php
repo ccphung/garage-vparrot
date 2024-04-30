@@ -71,12 +71,14 @@ class AdCrudController extends AbstractCrudController
 
             FormField::addTab('Informations complémentaires'),
             ChoiceField::new('gearcase')
-                ->setLabel('Boîte de vitesse')
-                ->hideOnIndex()
-                ->setChoices([
-                    'Manuelle' => 'Manuelle',
-                    'Automatique' => 'Automatique',
-                ]),
+            ->setLabel('Boîte de vitesse')
+            ->hideOnIndex()
+            ->setChoices([
+                'Manuelle' => 'Manuelle',
+                'Automatique' => 'Automatique',
+            ])
+            ->setFormTypeOption('expanded', false)
+            ->setFormTypeOption('placeholder', 'Choisir une option'),
             IntegerField::new('door')
                 ->setLabel('Nombre de portières')
                 ->hideOnIndex(),
@@ -86,9 +88,16 @@ class AdCrudController extends AbstractCrudController
             IntegerField::new('power')
                 ->setLabel('Puissance')
                 ->hideOnIndex(),
-            TextField::new('Energy')
+            ChoiceField::new('Energy')
                 ->setLabel('Energie')
                 ->setRequired(true)
+                ->setChoices([
+                    'Essence' => 'Essence',
+                    'Diesel' => 'Diesel',
+                    'Electrique' => 'Electrique',
+                    'Hybride' => 'Hybride',
+                ])
+                ->setFormTypeOption('placeholder', 'Choisir une option')
                 ->hideOnIndex(),
 
             FormField::addTab('Options & équipements'),
