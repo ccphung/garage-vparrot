@@ -11,11 +11,12 @@ nav {
     font-size: 1em;
     letter-spacing: 1px;
     margin: 5px;
+    padding:10px;
 }
 
 .nav-link:hover {
     color:rgb(173, 114, 18);
-    transform: scale(1.1);
+    letter-spacing: 2px;
     transition: 0.5s;
 }
 
