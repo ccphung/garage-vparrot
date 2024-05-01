@@ -47,7 +47,7 @@
                             </div>
                             {% for annonce in annonces %}
                                 <div class="carousel-item">
-                                    <img class="card-img-top bg-carrou" src="{{ 'https://images-parrot.s3.eu-north-1.amazonaws.com/' ~ annonce.getTitle ~ '/second-pic.jpg' }}" alt="card-img">
+                                    <img class="card-img-top bg-carrou" src="{{ 'https://images-parrot.s3.eu-north-1.amazonaws.com/' ~ annonce.getUniqueCode ~ '/second-pic.jpg' }}" alt="card-img">
                                     <div class="carousel-caption">
                                         {{ annonce.brand }} - 
                                         {{ annonce.price }} €
