@@ -5,6 +5,7 @@
 @import url('footer.css');
 @import url('review.css');
 @import url('details.css');
+@import url('filters.css');
 
 /* Body */
 body {
@@ -55,15 +56,15 @@ header {
 
 /* Button blue */
 .btn-blue {
-    background: #3e17e8;
+    background: #2b2841;
     color:white;
-    border: 1px solid #3e17e8;
+    border: 1px solid #2b2841;
 }
 
 .btn-blue:hover {
-    background: #3d17e8bd;
+    background: #2b284174;
     color:white;
-    border: 1px solid #3d17e8bd;
+    border: 1px solid #2b284174;
 }
 
 /* Button yellow */
@@ -77,6 +78,19 @@ header {
     background-color: rgba(173, 114, 18, 0.741);
     color:white;
     border: 1px solid  rgba(173, 114, 18, 0.741);
+}
+
+
+/* Image hover */
+.img-hover:hover {
+    opacity: calc(0.4);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+/* Card */
+.card {
+    overflow: hidden;
 }
 
 /* Media queries */

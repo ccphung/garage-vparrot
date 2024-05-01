@@ -1,16 +1,31 @@
 {% for annonce in annonces %}
+
     <div class="col-lg-4 col-md-6 col-xs-12 mt-3 d-flex justify-content-center">
         <article class="card w-100">
-        <img class="card-img-top" src="{{ 'https://images-parrot.s3.eu-north-1.amazonaws.com/' ~ annonce.getTitle ~ '/first-pic.jpg' }}" alt="card-img">
+            <a href="{{ path('details', {"title": annonce.title})}}" class="btn p-0 text-decoration-none">
+            <img class="card-img-top img-hover" src="{{ 'https://images-parrot.s3.eu-north-1.amazonaws.com/' ~ annonce.getTitle ~ '/first-pic.jpg' }}" alt="card-img">
                 <div class="card-body">
-                    <div class="card-title">
+                    <div class="card-title mt-0">
                         <h4>{{ annonce.title|upper|replace({'-':' '})}}</h4>
                     </div>
-                    <p class="cart-text ad-price m-0 fw-bold">Prix : {{annonce.price}} €</p>
-                    <div class="mt-0">{{annonce.kilometers}} km - {{annonce.registrationYear|date('Y')}} - {{annonce.energy}} </div> 
-                    </br>
-                    <a href="{{ path('details', {"title": annonce.title})}}" class="btn btn-yellow">Voir l'annonce</a>
+                    <span>
+                        {{annonce.registrationYear|date('Y')}}
+                    </span> 
+                    <i class="fa-solid fa-grip-lines-vertical"></i>
+                    <span>
+                        {{annonce.energy}}
+                    </span>
+                    <i class="fa-solid fa-grip-lines-vertical"></i>
+                    <span>
+                        {{annonce.kilometers|number_format(0, '.', ' ')}} km
+                    </span>
+                    
+                            
+                    <p class="cart-text ad-price m-0 fw-bold text-center fs-5 border-top mt-2">{{annonce.price|number_format(0, '.', ' ')}} €</p>
+
                 </div>
+                    </a>
         </article>
     </div>
+
 {% endfor %}

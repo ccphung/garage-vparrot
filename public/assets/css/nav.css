@@ -3,21 +3,26 @@
 nav {
     background: black;
     position: absolute;
+    height: 4em;
+    overflow: hidden;
 
 }
 
 .nav-link {
     color: #fff;
-    font-size: 0.7em;
+    font-size: 1em;
     letter-spacing: 1px;
+    margin: 5px;
 }
 
 .nav-link:hover {
-    color:rgb(114, 87, 233);
+    color:rgb(173, 114, 18);
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .logo-img {
-    width: 50px;
+    width: 70px;
 }
 
 .logo-container {

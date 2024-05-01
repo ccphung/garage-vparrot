@@ -43,14 +43,14 @@
                 <div class="col-lg-6 col-md-8 col-sm-12">
                     <div class="card h-100">                         
                         <div class="card-body">
-                            <h3 class="card-title text-center">{{ ad.title|upper|replace({'-':' '})}}</h3>
-                            <h4 class="text-center ad-price text-blue">Prix : </span>{{ad.price}} €</h4>
+                            <h3 class="card-title text-center letter-spacing">{{ ad.title|upper|replace({'-':' '})}}</h3>
+                            <h4 class="text-center ad-price text-yellow">{{ad.price|number_format(0, '.', ' ')}} €</h4>
                             <div class="container">
                                 <div class="row mt-2">
-                                    <h5 class="card-title">Caractéristiques</h5>
+                                    <h5 class="card-title mt-2">Caractéristiques</h5>
                                     <div class="col-6">
                                         <p class="cart-text"><i class="fa-solid fa-car"></i> Marque: <span class="fw-bold">{{ad.brand}}</span></p>
-                                        <p class="cart-text"><i class="fa-solid fa-earth-americas"></i> Kilométrage: <span class="fw-bold">{{ad.kilometers}} km</span></p>
+                                        <p class="cart-text"><i class="fa-solid fa-earth-americas"></i> Kilométrage: <span class="fw-bold">{{ad.kilometers|number_format(0, '.', ' ')}} km</span></p>
                                         <p class="cart-text">
                                         <i class="fa-solid fa-calendar-days"></i>
                                             Année : <span class="fw-bold">{{ad.registrationYear|date('Y')}}</span>

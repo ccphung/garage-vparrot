@@ -5,6 +5,11 @@ footer {
     font-size: 0.7em;
     letter-spacing: 1px;
 }
+
+.letter-spacing {
+    letter-spacing: 3px;
+}
+
 .socials, .opening-hours {
     display:flex;
     justify-content: center;
