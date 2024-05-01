@@ -26,7 +26,7 @@ class AdController extends AbstractController
         $filterKm = $request->get('km');
 
         if($request->get('ajax')){
-            return $this->json([
+            return new JsonResponse ([
                 'content' => $this->renderView('ad/_content.html.twig', [
                     'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand, $filterYear, $filterKm),
                     'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
