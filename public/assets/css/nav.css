@@ -3,9 +3,7 @@
 nav {
     background: black;
     position: absolute;
-    height: 4em;
     overflow: hidden;
-
 }
 
 .nav-link {
