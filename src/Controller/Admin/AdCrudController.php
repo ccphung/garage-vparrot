@@ -82,8 +82,17 @@ class AdCrudController extends AbstractCrudController
             IntegerField::new('door')
                 ->setLabel('Nombre de portières')
                 ->hideOnIndex(),
-            TextField::new('color')
+            ChoiceField::new('color')
                 ->setLabel('Couleur')
+                ->setChoices([
+                    'Blanche' => 'Blanche',
+                    'Noire' => 'Noire',
+                    'Bleue' => 'Bleue',
+                    'Rouge' => 'Rouge',
+                    'Jaune' => 'Jaune',
+                    'Orange' => 'Orange'
+                ])
+                ->setFormTypeOption('placeholder', 'Choisir une option')
                 ->hideOnIndex(),
             IntegerField::new('power')
                 ->setLabel('Puissance')
