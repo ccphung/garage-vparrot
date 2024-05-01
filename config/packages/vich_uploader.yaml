@@ -30,7 +30,7 @@ vich_uploader:
             directory_namer:
                 service: vich_uploader.namer_directory_property
                 options: 
-                    property: 'title'
+                    property: 'unique_code'
                     transliterate: true
             inject_on_load: true
             delete_on_update: true
@@ -46,7 +46,7 @@ vich_uploader:
             directory_namer:
                 service: vich_uploader.namer_directory_property
                 options: 
-                    property: 'title'
+                    property: 'unique_code'
                     transliterate: true
             inject_on_load: true
             delete_on_update: true
@@ -62,7 +62,7 @@ vich_uploader:
             directory_namer:
                 service: vich_uploader.namer_directory_property
                 options: 
-                    property: 'title'
+                    property: 'unique_code'
                     transliterate: true
             inject_on_load: true
             delete_on_update: true
