@@ -119,6 +119,9 @@ class Ad
     #[ORM\JoinColumn(nullable: false)]
     private ?Brand $brand = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $uniqueCode = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -237,6 +240,7 @@ class Ad
         $this->setImageRename1("first-pic");
         $this->setImageRename2("second-pic");
         $this->setImageRename3("third-pic");
+        $this->setUniqueCode(hash('sha256', random_bytes(16)));
     }
 
     public function getImageName1(): ?string
@@ -511,6 +515,18 @@ class Ad
     public function setBrand(?Brand $brand): static
     {
         $this->brand = $brand;
+
+        return $this;
+    }
+
+    public function getUniqueCode(): ?string
+    {
+        return $this->uniqueCode;
+    }
+
+    public function setUniqueCode(string $uniqueCode): static
+    {
+        $this->uniqueCode = $uniqueCode;
 
         return $this;
     }
