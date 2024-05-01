@@ -50,7 +50,7 @@
                                     <img class="card-img-top bg-carrou" src="{{ 'https://images-parrot.s3.eu-north-1.amazonaws.com/' ~ annonce.getUniqueCode ~ '/second-pic.jpg' }}" alt="card-img">
                                     <div class="carousel-caption">
                                         {{ annonce.brand }} - 
-                                        {{ annonce.price }} €
+                                        {{ annonce.price|number_format(0, '.', ' ') }} €
                                     </div>
                                 </div>
                             {% endfor %}
