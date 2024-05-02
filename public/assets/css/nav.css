@@ -14,8 +14,8 @@ nav {
 
 .nav-link:hover {
     color:rgb(173, 114, 18);
-    letter-spacing: 2px;
-    transition: 0.5s;
+    text-decoration: underline;
+    transition: 0.2s;
 }
 
 .logo-img {
