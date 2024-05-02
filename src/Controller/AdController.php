@@ -9,6 +9,7 @@ use App\Repository\AdRepository;
 use App\Repository\BrandRepository;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,8 +42,11 @@ class AdController extends AbstractController
         ]);
     }
 
-    #[Route('/annonce/{title}', name: 'details')]
-    public function details(Ad $ad, OpeningHoursRepository $openingHours, Contact $contact, Request $request, EntityManagerInterface $manager): Response
+    #[Route('/annonce/{slug}', name: 'details')]
+    public function details(
+        #[MapEntity(mapping: ['slug' => 'id'])]
+        Ad $ad, OpeningHoursRepository $openingHours, Contact $contact, Request $request, EntityManagerInterface $manager
+        ): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);

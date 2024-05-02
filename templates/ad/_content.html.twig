@@ -2,7 +2,7 @@
 
     <div class="col-lg-4 col-md-6 col-xs-12 mt-3 d-flex justify-content-center">
         <article class="card w-100">
-            <a href="{{ path('details', {"title": annonce.title})}}" class="btn p-0 text-decoration-none">
+            <a href="{{ path('details', {"slug": annonce.id})}}" class="btn p-0 text-decoration-none">
             <img class="card-img-top img-hover" src="{{ 'https://images-parrot.s3.eu-north-1.amazonaws.com/' ~ annonce.getUniqueCode ~ '/first-pic.jpg' }}" alt="card-img">
                 <div class="card-body">
                     <div class="card-title mt-0">
