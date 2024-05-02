@@ -24,7 +24,16 @@ nav {
 
 .logo-container {
     position: absolute;
-    left: 50%;
 }
 
+@media screen and (max-width: 1000px){
+    .logo-container{
+        right: 20px;
+    }
+}
 
+@media screen and (min-width: 1000px){
+    .logo-container{
+        left: 50%;
+    }
+}
