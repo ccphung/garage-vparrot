@@ -104,18 +104,4 @@ header {
     .header-text {
         display:block;
     }
-
-    .header-img {
-        position: relative;
-    }
-}
-
-@media screen and (max-width: 420px){
-    .header-container {
-        position: relative;
-    }
-
-    header {
-        flex-direction: column;
-    }
 }
