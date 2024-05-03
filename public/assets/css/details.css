@@ -1,3 +1,11 @@
 .small-font {
     font-size: 0.7em;
 }
+
+.underline{
+    text-decoration: none;
+}
+
+.underline:hover {
+    text-decoration: underline;
+}
