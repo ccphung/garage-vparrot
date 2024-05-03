@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\AnnouncementRepository;
 use App\Repository\OpeningHoursRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,7 +12,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     #[Route(path: '/connexion', name: 'app_login')]
-    public function login(AuthenticationUtils $authenticationUtils, OpeningHoursRepository $openingHours): Response
+    public function login(AuthenticationUtils $authenticationUtils, OpeningHoursRepository $openingHours, AnnouncementRepository $annRepository): Response
     {
         if ($this->getUser()) {
             return $this->redirectToRoute('app_home');
@@ -23,7 +24,7 @@ class SecurityController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error,
-        'horaires' => $openingHours->findOneBy([]),
+        'horaires' => $openingHours->findOneBy([]), 'annSpeciales' => $annRepository->findBy([], ['id' => 'asc'])
         ]);
     }
 
