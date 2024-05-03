@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %} Annonce {{ ad.title|upper|replace({'-':' '})}} {% endblock %}
+{% block title %} Annonce {{ ad.title|capitalize|replace({'-':' '})}} - Garage Vincent Parrot {% endblock %}
 
 {% block body %}  
         <a href="{{ path('app_ad') }}" class="text-black m-2 underline"> < Retour aux annonces</a>
