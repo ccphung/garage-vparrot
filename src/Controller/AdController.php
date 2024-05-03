@@ -6,6 +6,7 @@ use App\Entity\Ad;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\AdRepository;
+use App\Repository\AnnouncementRepository;
 use App\Repository\BrandRepository;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -19,7 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdController extends AbstractController
 {
     #[Route('/annonces', name: 'app_ad')]
-    public function index(OpeningHoursRepository $openingHours, AdRepository $adRepository, Request $request, BrandRepository $brandRepository): Response
+    public function index(OpeningHoursRepository $openingHours, AdRepository $adRepository, Request $request, BrandRepository $brandRepository, AnnouncementRepository $annRepository): Response
     {
         $filterPrice = $request->get('prices');
         $filterBrand = $request->get('brand');
@@ -39,13 +40,14 @@ class AdController extends AbstractController
             'brands' => $brandRepository->findAll(),
             'horaires' => $openingHours->findOneBy([]),
             'annonces' => $adRepository->findByFilter($filterPrice, $filterBrand, $filterYear, $filterKm),
+            'annSpeciales' => $annRepository->findBy([], ['id' => 'asc'])
         ]);
     }
 
     #[Route('/annonce/{slug}', name: 'details')]
     public function details(
         #[MapEntity(mapping: ['slug' => 'id'])]
-        Ad $ad, OpeningHoursRepository $openingHours, Contact $contact, Request $request, EntityManagerInterface $manager
+        Ad $ad, OpeningHoursRepository $openingHours, Contact $contact, Request $request, EntityManagerInterface $manager, AnnouncementRepository $annRepository
         ): Response
     {
         $contact = new Contact();
@@ -69,7 +71,8 @@ class AdController extends AbstractController
         return $this->render('ad/detail.html.twig', [
             'ad' => $ad,
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'annSpeciales' => $annRepository->findBy([], ['id' => 'asc'])
         ]);
                 
     }

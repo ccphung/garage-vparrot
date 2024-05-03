@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\AnnouncementRepository;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(OpeningHoursRepository $openingHours, Request $request, EntityManagerInterface $manager): Response
+    public function index(OpeningHoursRepository $openingHours, Request $request, EntityManagerInterface $manager, AnnouncementRepository $annRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -38,6 +39,7 @@ class ContactController extends AbstractController
         return $this->render('contact/index.html.twig', [
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
             'form' => $form->createView(),
+            'annSpeciales' => $annRepository->findBy([], ['id' => 'asc']),
         ]);
     }
 }

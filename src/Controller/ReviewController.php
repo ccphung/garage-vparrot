@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Review;
 use App\Form\ReviewType;
+use App\Repository\AnnouncementRepository;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ReviewController extends AbstractController
 {
     #[Route('/avis', name: 'app_review')]
-    public function index(OpeningHoursRepository $openingHours, Request $request, EntityManagerInterface $manager): Response
+    public function index(OpeningHoursRepository $openingHours, Request $request, EntityManagerInterface $manager, AnnouncementRepository $annRepository): Response
     {
         $contact = new Review();
         $form = $this->createForm(ReviewType::class, $contact);
@@ -38,6 +39,7 @@ class ReviewController extends AbstractController
         return $this->render('review/index.html.twig', [
             'horaires' => $openingHours->findOneBy([], ['id' => 'asc']),
             'form' => $form->createView(),
+            'annSpeciales' => $annRepository->findBy([], ['id' => 'asc'])
         ]);
     }
 }
