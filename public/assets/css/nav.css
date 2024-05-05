@@ -26,13 +26,13 @@ nav {
     position: absolute;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 992px){
     .logo-container{
         right: 20px;
     }
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 992px){
     .logo-container{
         left: 50%;
     }
