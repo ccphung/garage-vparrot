@@ -15,17 +15,29 @@ use App\Entity\Review;
 use App\Entity\Service;
 use App\Entity\User;
 use App\Entity\Brand;
+use App\Repository\ContactRepository;
+use App\Repository\ReviewRepository;
 use Symfony\Component\Security\Http\Attribute\IsGranted as AttributeIsGranted;
 
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/espace-gestion', name: 'espace-gestion')]
     #[AttributeIsGranted('ROLE_USER')]
+
     public function index(): Response
     {
         return $this->render('admin/dashboard.html.twig');
     }
 
+    private $contactRepository;
+    private $reviewRepository;
+    
+    public function __construct(ContactRepository $contactRepository, ReviewRepository $reviewRepository)
+    {
+        $this->contactRepository = $contactRepository;
+        $this->reviewRepository = $reviewRepository;
+    }
+    
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
@@ -47,9 +59,17 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Horaires d\'ouverture', 'fa-solid fa-calendar-days', OpeningHours::class)
         ->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class)
-        ->setPermission('ROLE_USER');
+        ->setPermission('ROLE_USER')
+        ->setBadge(
+            $this->reviewRepository->findUnapprovedReviewsCount(),
+            'primary'
+        );
         yield MenuItem::linkToCrud('Contact', 'fa-solid fa-person', Contact::class)
-        ->setPermission('ROLE_USER');
+        ->setPermission('ROLE_USER')
+        ->setBadge(
+            $this->contactRepository->findUnprocessedContactsCount(),
+            'primary'
+        );
         yield MenuItem::linkToCrud('Annonce spéciale', 'fa-solid fa-triangle-exclamation', Announcement::class)
         ->setPermission('ROLE_ADMIN');
     }
